@@ -12,6 +12,148 @@ function displayLatestWeek(weeks) {
     return;
   }
 
+  const scoredRows = weeks.filter(row => {
+    return row["Score"] !== "" &&
+           row["Score"] !== null &&
+           row["Score"] !== undefined &&
+           !isNaN(Number(row["Score"]));
+  });
+
+  if (scoredRows.length === 0) {
+    container.innerHTML =
+      `<div class="loading">
+        No completed weekly results yet.
+      </div>`;
+    return;
+  }
+
+  const contestOrder = [];
+
+  weeks.forEach(row => {
+    const contest = row["Week"];
+
+    if (contest && !contestOrder.includes(contest)) {
+      contestOrder.push(contest);
+    }
+  });
+
+  let latestContest = null;
+
+  contestOrder.forEach(contest => {
+    const hasScores = scoredRows.some(
+      row => row["Week"] === contest
+    );
+
+    if (hasScores) {
+      latestContest = contest;
+    }
+  });
+
+  if (!latestContest) {
+    container.innerHTML =
+      `<div class="loading">
+        No completed weekly results yet.
+      </div>`;
+    return;
+  }
+
+  const latestResults = scoredRows
+    .filter(row =>
+      row["Week"] === latestContest
+    )
+    .sort((a, b) =>
+      Number(a["Rank"] || 999) -
+      Number(b["Rank"] || 999)
+    );
+
+  document.getElementById(
+    "latestWeekLabel"
+  ).textContent = latestContest;
+
+  let html = `
+
+    <div class="week-summary">
+
+      <div class="week-title">
+        <span>${escapeHtml(latestContest)}</span>
+      </div>
+
+      <div class="week-description">
+        Latest completed contest
+      </div>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+
+        <tbody>
+  `;
+
+  latestResults.forEach((player, index) => {
+
+    const rank =
+      Number(player["Rank"]) ||
+      index + 1;
+
+    let rankClass = "";
+
+    if (rank === 1) {
+      rankClass = "first";
+    }
+
+    if (rank === 2) {
+      rankClass = "second";
+    }
+
+    if (rank === 3) {
+      rankClass = "third";
+    }
+
+    html += `
+
+      <tr>
+
+        <td class="rank ${rankClass}">
+          ${rank}
+        </td>
+
+        <td class="player-name">
+          ${escapeHtml(
+            player["Player"] || "—"
+          )}
+        </td>
+
+        <td class="points">
+          ${formatNumber(
+            player["Score"]
+          )}
+        </td>
+
+      </tr>
+    `;
+  });
+
+  html += `
+
+        </tbody>
+      </table>
+
+    </div>
+  `;
+
+  container.innerHTML = html;
+}
+
   // Only keep rows that actually have a score
   const scoredRows = weeks.filter(row => {
     return row["Score"] !== "" &&
