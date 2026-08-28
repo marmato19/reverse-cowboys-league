@@ -1,1473 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>REVERSE COWBOYS | 2026 NFL League</title>
-
-  <style>
-    :root {
-      --navy: #08131f;
-      --navy-2: #0d1c2b;
-      --navy-3: #122538;
-      --gold: #d4af5f;
-      --gold-light: #f0d58b;
-      --gold-dark: #9d7b32;
-      --silver: #c5cbd1;
-      --bronze: #b47b50;
-      --white: #f7f8fa;
-      --text: #d9e0e7;
-      --muted: #8998a7;
-      --border: #294052;
-      --green: #79b58a;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(
-          circle at 85% 0%,
-          rgba(212,175,95,.13),
-          transparent 30%
-        ),
-        linear-gradient(
-          135deg,
-          var(--navy),
-          #050b11
-        );
-      color: var(--white);
-      min-height: 100vh;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      background:
-        linear-gradient(
-          135deg,
-          #102438,
-          #08131f
-        );
-      border-bottom: 3px solid var(--gold);
-      box-shadow: 0 5px 25px rgba(0,0,0,.35);
-    }
-
-    .header-inner {
-      max-width: 1250px;
-      margin: auto;
-      padding: 25px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      width: 88px;
-      height: 88px;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,.45));
-    }
-
-    .brand h1 {
-      color: var(--gold-light);
-      font-size: 31px;
-      font-weight: 900;
-      letter-spacing: 2.5px;
-    }
-
-    .brand p {
-      margin-top: 7px;
-      color: #aab8c5;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .season-badge {
-      margin-left: auto;
-      border: 1px solid var(--gold);
-      background: rgba(212,175,95,.10);
-      color: var(--gold-light);
-      border-radius: 5px;
-      padding: 11px 17px;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      box-shadow: inset 0 0 15px rgba(212,175,95,.06);
-    }
-
-    /* ================= NAV ================= */
-
-    nav {
-      background: #091522;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width: 1250px;
-      margin: auto;
-      display: flex;
-      padding: 0 20px;
-    }
-
-    nav button {
-      background: transparent;
-      border: none;
-      border-bottom: 3px solid transparent;
-      color: var(--muted);
-      padding: 17px 21px;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      cursor: pointer;
-    }
-
-    nav button:hover,
-    nav button.active {
-      color: var(--gold-light);
-      border-bottom-color: var(--gold);
-      background: rgba(212,175,95,.04);
-    }
-
-    /* ================= MAIN ================= */
-
-    main {
-      max-width: 1250px;
-      margin: auto;
-      padding: 40px 25px 75px;
-    }
-
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      margin-bottom: 28px;
-      gap: 20px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 2.5px;
-      margin-bottom: 9px;
-    }
-
-    .hero h2 {
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .hero-subtitle {
-      color: var(--muted);
-      margin-top: 8px;
-      font-size: 13px;
-    }
-
-    .live-indicator {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #91a0ae;
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 9px rgba(121,181,138,.8);
-    }
-
-    /* ================= STAT CARDS ================= */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .card {
-      background:
-        linear-gradient(
-          145deg,
-          var(--navy-3),
-          var(--navy-2)
-        );
-      border: 1px solid var(--border);
-      border-top: 2px solid var(--gold-dark);
-      border-radius: 9px;
-      padding: 21px;
-      min-height: 122px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.20);
-    }
-
-    .card-label {
-      color: var(--muted);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-weight: 900;
-    }
-
-    .card-value {
-      margin-top: 11px;
-      color: var(--gold-light);
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .card-player {
-      margin-top: 5px;
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    /* ================= SECTIONS ================= */
-
-    .section {
-      background: var(--navy-2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.22);
-    }
-
-    .section-header {
-      padding: 19px 23px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(212,175,95,.13),
-          rgba(212,175,95,.025),
-          transparent
-        );
-      border-bottom: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .section-header h3 {
-      font-size: 16px;
-      letter-spacing: .8px;
-    }
-
-    .section-header span {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-    }
-
-    /* ================= TABLE ================= */
-
-    .table-wrap {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 650px;
-    }
-
-    th {
-      text-align: left;
-      color: #738493;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 14px 20px;
-      background: #0a1724;
-    }
-
-    td {
-      padding: 17px 20px;
-      border-top: 1px solid #203445;
-      font-size: 13px;
-    }
-
-    tbody tr:nth-child(even) td {
-      background: rgba(255,255,255,.012);
-    }
-
-    tbody tr:hover td {
-      background: rgba(212,175,95,.055);
-    }
-
-    .rank {
-      width: 65px;
-      color: var(--muted);
-      font-weight: 900;
-    }
-
-    .rank.first {
-      color: var(--gold-light);
-      font-size: 20px;
-    }
-
-    .rank.second {
-      color: var(--silver);
-      font-size: 18px;
-    }
-
-    .rank.third {
-      color: var(--bronze);
-      font-size: 18px;
-    }
-
-    .player-name {
-      font-weight: 900;
-      color: var(--white);
-    }
-
-    .points {
-      color: var(--gold-light);
-      font-size: 16px;
-      font-weight: 900;
-    }
-
-    .secondary-stat {
-      color: #b2bec9;
-    }
-
-    /* ================= WEEK RESULTS ================= */
-
-    .week-summary {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 19px 23px;
-      background: #0b1927;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .week-title {
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .week-title span {
-      color: var(--gold);
-    }
-
-    .week-description {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    /* ================= STATUS ================= */
-
-    .loading {
-      padding: 40px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .error {
-      padding: 35px;
-      text-align: center;
-      color: #d8a8a8;
-      font-size: 13px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      border-top: 1px solid var(--border);
-      background: #07111b;
-      padding: 27px;
-      text-align: center;
-      color: #617181;
-      font-size: 10px;
-      letter-spacing: 1.2px;
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 850px) {
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .season-badge {
-        display: none;
-      }
-
-      .hero h2 {
-        font-size: 30px;
-      }
-
-    }
-
-    @media (max-width: 550px) {
-
-      .header-inner {
-        padding: 18px 15px;
-        gap: 13px;
-      }
-
-      .logo {
-        width: 61px;
-        height: 61px;
-      }
-
-      .brand h1 {
-        font-size: 20px;
-        letter-spacing: 1.3px;
-      }
-
-      .brand p {
-        font-size: 8px;
-        letter-spacing: 1px;
-      }
-
-      .nav-inner {
-        overflow-x: auto;
-      }
-
-      nav button {
-        padding: 14px 11px;
-        font-size: 10px;
-      }
-
-      main {
-        padding: 28px 12px 50px;
-      }
-
-      .hero h2 {
-        font-size: 26px;
-      }
-
-      .cards {
-        gap: 9px;
-      }
-
-      .card {
-        padding: 15px;
-        min-height: 105px;
-      }
-
-      .card-value {
-        font-size: 18px;
-      }
-
-      .section-header {
-        padding: 17px;
-      }
-
-      td,
-      th {
-        padding: 13px 12px;
-      }
-
-    }
-  </style>
-</head>
-
-
-<body>
-
-
-<header>
-
-  <div class="header-inner">
-
-    <img
-      class="logo"
-      src="cowboys%20logo.png"
-      alt="Reverse Cowboys Logo"
-    >
-
-    <div class="brand">
-
-      <h1>REVERSE COWBOYS</h1>
-
-      <p>
-        DraftKings NFL League
-      </p>
-
-    </div>
-
-    <div class="season-badge">
-      2026 SEASON
-    </div>
-
-  </div>
-
-</header>
-
-
-<nav>
-
-  <div class="nav-inner">
-
-    <button class="active">
-      HOME
-    </button>
-
-    <button>
-      STANDINGS
-    </button>
-
-    <button>
-      WEEKS
-    </button>
-
-    <button>
-      PLAYERS
-    </button>
-
-    <button>
-      HISTORY
-    </button>
-
-  </div>
-
-</nav>
-
-
-<main>
-
-
-  <!-- HERO -->
-
-  <div class="hero">
-
-    <div>
-
-      <div class="eyebrow">
-        REVERSE COWBOYS NFL LEAGUE
-      </div>
-
-      <h2>
-        2026 SEASON
-      </h2>
-
-      <div class="hero-subtitle">
-        The race is on.
-      </div>
-
-    </div>
-
-    <div class="live-indicator">
-
-      <span class="live-dot"></span>
-
-      Live League Data
-
-    </div>
-
-  </div>
-
-
-  <!-- LEAGUE LEADERS -->
-
-  <div class="cards">
-
-    <div class="card">
-
-      <div class="card-label">
-        Points Leader
-      </div>
-
-      <div
-        class="card-value"
-        id="pointsLeader"
-      >
-        —
-      </div>
-
-      <div
-        class="card-player"
-        id="pointsLeaderName"
-      >
-        —
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="card-label">
-        Best Single Week
-      </div>
-
-      <div
-        class="card-value"
-        id="bestWeek"
-      >
-        —
-      </div>
-
-      <div
-        class="card-player"
-        id="bestWeekName"
-      >
-        —
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="card-label">
-        Most Weekly Wins
-      </div>
-
-      <div
-        class="card-value"
-        id="winsLeader"
-      >
-        —
-      </div>
-
-      <div
-        class="card-player"
-        id="winsLeaderName"
-      >
-        —
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="card-label">
-        League Members
-      </div>
-
-      <div
-        class="card-value"
-        id="playerCount"
-      >
-        —
-      </div>
-
-      <div class="card-player">
-        Competing in 2026
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- STANDINGS -->
-
-  <section class="section">
-
-    <div class="section-header">
-
-      <h3>
-        🏆 CURRENT STANDINGS
-      </h3>
-
-      <span>
-        2026 SEASON
-      </span>
-
-    </div>
-
-
-    <div
-      id="standingsContainer"
-      class="table-wrap"
-    >
-
-      <div class="loading">
-        Loading standings...
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- LATEST WEEK -->
-
-  <section class="section">
-
-    <div class="section-header">
-
-      <h3>
-        📅 LATEST RESULTS
-      </h3>
-
-      <span id="latestWeekLabel">
-        —
-      </span>
-
-    </div>
-
-
-    <div id="latestWeekContainer">
-
-      <div class="loading">
-        Loading latest results...
-      </div>
-
-    </div>
-
-  </section>
-
-
-</main>
-
-
-<footer>
-
-  REVERSE COWBOYS • 2026 NFL LEAGUE
-
-</footer>
-
-
 <script>
+function displayLatestWeek(weeks) {
 
-  const API_URL =
-    "https://script.google.com/macros/s/AKfycbwboeUmMTcgpKO3ZLnwmRWIebSEDUsgRzCrH-sgU32IldIl_nbLVi5YbmAN26Jsj5sj/exec";
+  const container =
+    document.getElementById("latestWeekContainer");
 
-
-  let leagueData = null;
-
-
-  async function loadLeagueData() {
-
-    try {
-
-      const response =
-        await fetch(API_URL);
-
-      if (!response.ok) {
-        throw new Error(
-          "Unable to retrieve league data."
-        );
-      }
-
-      leagueData =
-        await response.json();
-
-
-      displayStandings(
-        leagueData.standings
-      );
-
-
-      displayLeaders(
-        leagueData.players
-      );
-
-
-      displayLatestWeek(
-        leagueData.weeks
-      );
-
-
-    } catch (error) {
-
-      document.getElementById(
-        "standingsContainer"
-      ).innerHTML =
-
-        `<div class="error">
-          Unable to load league standings.
-          <br><br>
-          Please refresh the page.
-        </div>`;
-
-
-      document.getElementById(
-        "latestWeekContainer"
-      ).innerHTML =
-
-        `<div class="error">
-          Unable to load weekly results.
-        </div>`;
-
-
-      console.error(error);
-
-    }
-
+  if (!weeks || weeks.length === 0) {
+    container.innerHTML =
+      `<div class="loading">
+        No weekly results available yet.
+      </div>`;
+    return;
   }
 
+  // Only keep rows that actually have a score
+  const scoredRows = weeks.filter(row => {
+    return row["Score"] !== "" &&
+           row["Score"] !== null &&
+           row["Score"] !== undefined &&
+           !isNaN(Number(row["Score"]));
+  });
 
-  /* ================= STANDINGS ================= */
+  if (scoredRows.length === 0) {
+    container.innerHTML =
+      `<div class="loading">
+        No completed weekly results yet.
+      </div>`;
+    return;
+  }
 
-  function displayStandings(
-    standings
-  ) {
+  // Preserve contest order exactly as it appears in Website_Weeks
+  const contestOrder = [];
 
-    const container =
-      document.getElementById(
-        "standingsContainer"
-      );
-
+  weeks.forEach(row => {
+    const contest = row["Week"];
 
     if (
-      !standings ||
-      standings.length === 0
+      contest &&
+      !contestOrder.includes(contest)
     ) {
-
-      container.innerHTML =
-
-        `<div class="loading">
-          No standings available yet.
-        </div>`;
-
-      return;
-
+      contestOrder.push(contest);
     }
+  });
 
+  // Find the latest contest that has at least one score
+  let latestContest = null;
 
-    standings.sort(
-      (a, b) =>
-        Number(a["Rank"] || 999) -
-        Number(b["Rank"] || 999)
+  contestOrder.forEach(contest => {
+
+    const hasScores = scoredRows.some(
+      row => row["Week"] === contest
     );
 
+    if (hasScores) {
+      latestContest = contest;
+    }
 
-    let html = `
+  });
+
+  if (!latestContest) {
+    container.innerHTML =
+      `<div class="loading">
+        No completed weekly results yet.
+      </div>`;
+    return;
+  }
+
+  const latestResults = scoredRows
+    .filter(row =>
+      row["Week"] === latestContest
+    )
+    .sort((a, b) =>
+      Number(a["Rank"] || 999) -
+      Number(b["Rank"] || 999)
+    );
+
+  document.getElementById(
+    "latestWeekLabel"
+  ).textContent = latestContest;
+
+
+  let html = `
+
+    <div class="week-summary">
+
+      <div class="week-title">
+        <span>${escapeHtml(latestContest)}</span>
+      </div>
+
+      <div class="week-description">
+        Latest completed contest
+      </div>
+
+    </div>
+
+    <div class="table-wrap">
 
       <table>
 
         <thead>
 
           <tr>
-
             <th>#</th>
             <th>Player</th>
-            <th>Total Points</th>
-            <th>Avg / Week</th>
-            <th>Wins</th>
-            <th>Best Week</th>
-
+            <th>Score</th>
           </tr>
 
         </thead>
 
         <tbody>
 
-    `;
+  `;
 
 
-    standings.forEach(
-      (player, index) => {
+  latestResults.forEach((player, index) => {
 
-        const rank =
-          Number(player["Rank"]) ||
-          index + 1;
+    const rank =
+      Number(player["Rank"]) ||
+      index + 1;
 
+    let rankClass = "";
 
-        let rankClass = "";
+    if (rank === 1) {
+      rankClass = "first";
+    }
 
+    if (rank === 2) {
+      rankClass = "second";
+    }
 
-        if (rank === 1) {
-          rankClass = "first";
-        }
-
-
-        if (rank === 2) {
-          rankClass = "second";
-        }
-
-
-        if (rank === 3) {
-          rankClass = "third";
-        }
-
-
-        html += `
-
-          <tr>
-
-            <td
-              class="rank ${rankClass}"
-            >
-              ${rank}
-            </td>
-
-            <td class="player-name">
-              ${escapeHtml(
-                player["Player"] || "—"
-              )}
-            </td>
-
-            <td class="points">
-              ${formatNumber(
-                player["Total Points"]
-              )}
-            </td>
-
-            <td class="secondary-stat">
-              ${formatNumber(
-                player["Avg / Week"]
-              )}
-            </td>
-
-            <td class="secondary-stat">
-              ${formatNumber(
-                player["Weekly Wins"]
-              )}
-            </td>
-
-            <td class="secondary-stat">
-              ${formatNumber(
-                player["Best Week"]
-              )}
-            </td>
-
-          </tr>
-
-        `;
-
-      }
-    );
-
+    if (rank === 3) {
+      rankClass = "third";
+    }
 
     html += `
+
+      <tr>
+
+        <td class="rank ${rankClass}">
+          ${rank}
+        </td>
+
+        <td class="player-name">
+          ${escapeHtml(
+            player["Player"] || "—"
+          )}
+        </td>
+
+        <td class="points">
+          ${formatNumber(
+            player["Score"]
+          )}
+        </td>
+
+      </tr>
+
+    `;
+
+  });
+
+
+  html += `
 
         </tbody>
 
       </table>
 
-    `;
+    </div>
 
+  `;
 
-    container.innerHTML =
-      html;
 
-  }
-
-
-  /* ================= LEADERS ================= */
-
-  function displayLeaders(
-    players
-  ) {
-
-    if (
-      !players ||
-      players.length === 0
-    ) {
-      return;
-    }
-
-
-    document.getElementById(
-      "playerCount"
-    ).textContent =
-      players.length;
-
-
-    const points =
-      players
-        .filter(
-          p =>
-            p["Total Points"] !== "" &&
-            p["Total Points"] !== null
-        )
-        .sort(
-          (a, b) =>
-            Number(b["Total Points"]) -
-            Number(a["Total Points"])
-        );
-
-
-    if (points.length > 0) {
-
-      document.getElementById(
-        "pointsLeader"
-      ).textContent =
-        formatNumber(
-          points[0]["Total Points"]
-        );
-
-
-      document.getElementById(
-        "pointsLeaderName"
-      ).textContent =
-        points[0]["Player"];
-
-    }
-
-
-    const wins =
-      players
-        .filter(
-          p =>
-            p["Weekly Wins"] !== "" &&
-            p["Weekly Wins"] !== null
-        )
-        .sort(
-          (a, b) =>
-            Number(b["Weekly Wins"]) -
-            Number(a["Weekly Wins"])
-        );
-
-
-    if (wins.length > 0) {
-
-      document.getElementById(
-        "winsLeader"
-      ).textContent =
-        formatNumber(
-          wins[0]["Weekly Wins"]
-        );
-
-
-      document.getElementById(
-        "winsLeaderName"
-      ).textContent =
-        wins[0]["Player"];
-
-    }
-
-
-    const best =
-      players
-        .filter(
-          p =>
-            p["Best Week"] !== "" &&
-            p["Best Week"] !== null
-        )
-        .sort(
-          (a, b) =>
-            Number(b["Best Week"]) -
-            Number(a["Best Week"])
-        );
-
-
-    if (best.length > 0) {
-
-      document.getElementById(
-        "bestWeek"
-      ).textContent =
-        formatNumber(
-          best[0]["Best Week"]
-        );
-
-
-      document.getElementById(
-        "bestWeekName"
-      ).textContent =
-        best[0]["Player"];
-
-    }
-
-  }
-
-
-  /* ================= LATEST WEEK ================= */
-
-  function displayLatestWeek(
-    weeks
-  ) {
-
-    const container =
-      document.getElementById(
-        "latestWeekContainer"
-      );
-
-
-    if (
-      !weeks ||
-      weeks.length === 0
-    ) {
-
-      container.innerHTML =
-
-        `<div class="loading">
-          No weekly results available yet.
-        </div>`;
-
-      return;
-
-    }
-
-
-    /*
-      Find the most recent week
-      represented in the Website_Weeks data.
-
-      This intentionally doesn't assume
-      the column is called "Week" only.
-    */
-
-    const possibleWeekColumns = [
-      "Week",
-      "week",
-      "WEEK",
-      "Week #",
-      "Week Number"
-    ];
-
-
-    let weekColumn = null;
-
-
-    for (
-      const column
-      of possibleWeekColumns
-    ) {
-
-      if (
-        weeks.some(
-          row =>
-            row[column] !== undefined
-        )
-      ) {
-
-        weekColumn =
-          column;
-
-        break;
-
-      }
-
-    }
-
-
-    if (!weekColumn) {
-
-      container.innerHTML =
-
-        `<div class="loading">
-          Weekly data is available,
-          but the week column needs to
-          be identified.
-        </div>`;
-
-      return;
-
-    }
-
-
-    const validWeeks =
-      weeks
-        .map(
-          row =>
-            Number(
-              row[weekColumn]
-            )
-        )
-        .filter(
-          value =>
-            !isNaN(value)
-        );
-
-
-    if (
-      validWeeks.length === 0
-    ) {
-
-      container.innerHTML =
-
-        `<div class="loading">
-          No completed weekly results yet.
-        </div>`;
-
-      return;
-
-    }
-
-
-    const latestWeek =
-      Math.max(
-        ...validWeeks
-      );
-
-
-    const latestResults =
-      weeks.filter(
-        row =>
-          Number(
-            row[weekColumn]
-          ) === latestWeek
-      );
-
-
-    document.getElementById(
-      "latestWeekLabel"
-    ).textContent =
-      "WEEK " + latestWeek;
-
-
-    /*
-      Identify likely player and score
-      columns automatically.
-    */
-
-    const playerColumns = [
-      "Player",
-      "player",
-      "PLAYER",
-      "Name",
-      "Player Name"
-    ];
-
-
-    const scoreColumns = [
-      "Score",
-      "score",
-      "Points",
-      "Total Points",
-      "Weekly Points"
-    ];
-
-
-    let playerColumn = null;
-    let scoreColumn = null;
-
-
-    for (
-      const column
-      of playerColumns
-    ) {
-
-      if (
-        latestResults.some(
-          row =>
-            row[column] !== undefined
-        )
-      ) {
-
-        playerColumn =
-          column;
-
-        break;
-
-      }
-
-    }
-
-
-    for (
-      const column
-      of scoreColumns
-    ) {
-
-      if (
-        latestResults.some(
-          row =>
-            row[column] !== undefined
-        )
-      ) {
-
-        scoreColumn =
-          column;
-
-        break;
-
-      }
-
-    }
-
-
-    if (
-      !playerColumn ||
-      !scoreColumn
-    ) {
-
-      container.innerHTML =
-
-        `<div class="loading">
-          Weekly results are available,
-          but the player/score columns
-          need to be identified.
-        </div>`;
-
-      return;
-
-    }
-
-
-    latestResults.sort(
-      (a, b) =>
-        Number(b[scoreColumn]) -
-        Number(a[scoreColumn])
-    );
-
-
-    let html = `
-
-      <div class="week-summary">
-
-        <div class="week-title">
-          WEEK <span>${latestWeek}</span>
-        </div>
-
-        <div class="week-description">
-          Most recent completed contest
-        </div>
-
-      </div>
-
-
-      <div class="table-wrap">
-
-        <table>
-
-          <thead>
-
-            <tr>
-              <th>#</th>
-              <th>Player</th>
-              <th>Score</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-    `;
-
-
-    latestResults.forEach(
-      (player, index) => {
-
-        let rankClass = "";
-
-        if (index === 0) {
-          rankClass = "first";
-        }
-
-        if (index === 1) {
-          rankClass = "second";
-        }
-
-        if (index === 2) {
-          rankClass = "third";
-        }
-
-
-        html += `
-
-          <tr>
-
-            <td
-              class="rank ${rankClass}"
-            >
-              ${index + 1}
-            </td>
-
-            <td class="player-name">
-              ${escapeHtml(
-                player[playerColumn] ||
-                "—"
-              )}
-            </td>
-
-            <td class="points">
-              ${formatNumber(
-                player[scoreColumn]
-              )}
-            </td>
-
-          </tr>
-
-        `;
-
-      }
-    );
-
-
-    html += `
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    `;
-
-
-    container.innerHTML =
-      html;
-
-  }
-
-
-  /* ================= HELPERS ================= */
-
-  function formatNumber(
-    value
-  ) {
-
-    if (
-      value === null ||
-      value === undefined ||
-      value === ""
-    ) {
-
-      return "—";
-
-    }
-
-
-    const number =
-      Number(value);
-
-
-    if (
-      isNaN(number)
-    ) {
-
-      return value;
-
-    }
-
-
-    return number.toFixed(2);
-
-  }
-
-
-  function escapeHtml(
-    value
-  ) {
-
-    const div =
-      document.createElement(
-        "div"
-      );
-
-    div.textContent =
-      value;
-
-    return div.innerHTML;
-
-  }
-
-
-  loadLeagueData();
-
+  container.innerHTML = html;
+}
 </script>
-
-</body>
-</html>
