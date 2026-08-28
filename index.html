@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>REVERSE COWBOYS | 2026 NFL League</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f14;
+      color: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #111821;
+      border-bottom: 1px solid #29313b;
+      padding: 22px 30px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      font-size: 27px;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+
+    .brand p {
+      margin-top: 5px;
+      color: #aab3bd;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: #151d26;
+      border-bottom: 1px solid #29313b;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+      padding: 0 20px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #aab3bd;
+      padding: 17px 15px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: .7px;
+      cursor: pointer;
+    }
+
+    nav button:hover,
+    nav button.active {
+      color: white;
+      border-bottom: 2px solid #d7b56d;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 35px 20px 60px;
+    }
+
+    .season-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 25px;
+      gap: 20px;
+    }
+
+    .season-heading h2 {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .season-heading span {
+      color: #aab3bd;
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #151d26;
+      border: 1px solid #29313b;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card-label {
+      color: #89939e;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .card-value {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .card-player {
+      margin-top: 4px;
+      color: #c7ced5;
+      font-size: 13px;
+    }
+
+    .section {
+      background: #111821;
+      border: 1px solid #29313b;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 25px;
+    }
+
+    .section-header {
+      padding: 20px 22px;
+      border-bottom: 1px solid #29313b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-header h3 {
+      font-size: 18px;
+      letter-spacing: .5px;
+    }
+
+    .section-header span {
+      color: #89939e;
+      font-size: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      color: #7f8994;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      padding: 14px 18px;
+      background: #151d26;
+    }
+
+    td {
+      padding: 16px 18px;
+      border-top: 1px solid #222b34;
+      font-size: 14px;
+    }
+
+    tr:hover td {
+      background: #151d26;
+    }
+
+    .rank {
+      width: 55px;
+      color: #aab3bd;
+      font-weight: bold;
+    }
+
+    .rank.top {
+      color: #d7b56d;
+      font-size: 18px;
+    }
+
+    .player-name {
+      font-weight: bold;
+    }
+
+    .points {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .loading {
+      padding: 35px;
+      text-align: center;
+      color: #89939e;
+    }
+
+    .error {
+      padding: 25px;
+      color: #e7a7a7;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #626d78;
+      font-size: 11px;
+      letter-spacing: .7px;
+    }
+
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .season-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .brand h1 {
+        font-size: 21px;
+      }
+
+      .logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      th:nth-child(4),
+      td:nth-child(4),
+      th:nth-child(5),
+      td:nth-child(5) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      header {
+        padding: 17px;
+      }
+
+      .header-inner {
+        gap: 12px;
+      }
+
+      nav button {
+        padding: 14px 9px;
+        font-size: 11px;
+      }
+
+      main {
+        padding: 25px 12px 45px;
+      }
+
+      .cards {
+        gap: 10px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      .card-value {
+        font-size: 17px;
+      }
+
+      td,
+      th {
+        padding: 13px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <img
+      class="logo"
+      src="cowboys%20logo.png"
+      alt="Reverse Cowboys Logo"
+    >
+
+    <div class="brand">
+      <h1>REVERSE COWBOYS</h1>
+      <p>DraftKings NFL League • 2026 Season</p>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="active">HOME</button>
+    <button>STANDINGS</button>
+    <button>WEEKS</button>
+    <button>PLAYERS</button>
+    <button>HISTORY</button>
+  </div>
+</nav>
+
+<main>
+
+  <div class="season-heading">
+    <div>
+      <h2>2026 SEASON</h2>
+      <span>REVERSE COWBOYS NFL LEAGUE</span>
+    </div>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-label">Points Leader</div>
+      <div class="card-value" id="pointsLeader">—</div>
+      <div class="card-player" id="pointsLeaderName">—</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Best Single Week</div>
+      <div class="card-value" id="bestWeek">—</div>
+      <div class="card-player" id="bestWeekName">—</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Most Weekly Wins</div>
+      <div class="card-value" id="winsLeader">—</div>
+      <div class="card-player" id="winsLeaderName">—</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Players</div>
+      <div class="card-value" id="playerCount">—</div>
+      <div class="card-player">League Members</div>
+    </div>
+
+  </div>
+
+  <section class="section">
+
+    <div class="section-header">
+      <h3>🏆 CURRENT STANDINGS</h3>
+      <span>2026 SEASON</span>
+    </div>
+
+    <div id="standingsContainer">
+      <div class="loading">
+        Loading standings...
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  REVERSE COWBOYS • 2026 NFL LEAGUE
+</footer>
+
+<script>
+
+  const API_URL =
+    "https://script.google.com/macros/s/AKfycbwboeUmMTcgpKO3ZLnwmRWIebSEDUsgRzCrH-sgU32IldIl_nbLVi5YbmAN26Jsj5sj/exec";
+
+  async function loadLeagueData() {
+
+    try {
+
+      const response = await fetch(API_URL);
+
+      if (!response.ok) {
+        throw new Error("Unable to retrieve league data.");
+      }
+
+      const data = await response.json();
+
+      displayStandings(data.standings);
+      displayLeaders(data.players);
+
+    } catch (error) {
+
+      document.getElementById("standingsContainer").innerHTML =
+        `<div class="error">
+          Unable to load league standings.
+          <br><br>
+          Please try refreshing the page.
+        </div>`;
+
+      console.error(error);
+
+    }
+
+  }
+
+
+  function displayStandings(standings) {
+
+    const container =
+      document.getElementById("standingsContainer");
+
+    if (!standings || standings.length === 0) {
+
+      container.innerHTML =
+        `<div class="loading">
+          No standings available yet.
+        </div>`;
+
+      return;
+    }
+
+    standings.sort((a, b) =>
+      Number(a["Rank"] || 999) -
+      Number(b["Rank"] || 999)
+    );
+
+    let html = `
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>Total Points</th>
+            <th>Avg / Week</th>
+            <th>Weekly Wins</th>
+            <th>Best Week</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    standings.forEach((player, index) => {
+
+      const rank =
+        player["Rank"] || index + 1;
+
+      html += `
+        <tr>
+          <td class="rank ${rank <= 3 ? "top" : ""}">
+            ${rank}
+          </td>
+
+          <td class="player-name">
+            ${player["Player"] || "—"}
+          </td>
+
+          <td class="points">
+            ${formatNumber(player["Total Points"])}
+          </td>
+
+          <td>
+            ${formatNumber(player["Avg / Week"])}
+          </td>
+
+          <td>
+            ${formatNumber(player["Weekly Wins"])}
+          </td>
+
+          <td>
+            ${formatNumber(player["Best Week"])}
+          </td>
+        </tr>
+      `;
+
+    });
+
+    html += `
+        </tbody>
+      </table>
+    `;
+
+    container.innerHTML = html;
+
+  }
+
+
+  function displayLeaders(players) {
+
+    if (!players || players.length === 0) {
+      return;
+    }
+
+    document.getElementById("playerCount").textContent =
+      players.length;
+
+    const points = players
+      .filter(p => p["Total Points"] !== "")
+      .sort((a, b) =>
+        Number(b["Total Points"]) -
+        Number(a["Total Points"])
+      );
+
+    if (points.length > 0) {
+
+      document.getElementById("pointsLeader").textContent =
+        formatNumber(points[0]["Total Points"]);
+
+      document.getElementById("pointsLeaderName").textContent =
+        points[0]["Player"];
+
+    }
+
+    const wins = players
+      .filter(p => p["Weekly Wins"] !== "")
+      .sort((a, b) =>
+        Number(b["Weekly Wins"]) -
+        Number(a["Weekly Wins"])
+      );
+
+    if (wins.length > 0) {
+
+      document.getElementById("winsLeader").textContent =
+        formatNumber(wins[0]["Weekly Wins"]);
+
+      document.getElementById("winsLeaderName").textContent =
+        wins[0]["Player"];
+
+    }
+
+    const best = players
+      .filter(p => p["Best Week"] !== "")
+      .sort((a, b) =>
+        Number(b["Best Week"]) -
+        Number(a["Best Week"])
+      );
+
+    if (best.length > 0) {
+
+      document.getElementById("bestWeek").textContent =
+        formatNumber(best[0]["Best Week"]);
+
+      document.getElementById("bestWeekName").textContent =
+        best[0]["Player"];
+
+    }
+
+  }
+
+
+  function formatNumber(value) {
+
+    if (
+      value === null ||
+      value === undefined ||
+      value === ""
+    ) {
+      return "—";
+    }
+
+    const number = Number(value);
+
+    if (isNaN(number)) {
+      return value;
+    }
+
+    return number.toFixed(2);
+
+  }
+
+
+  loadLeagueData();
+
+</script>
+
+</body>
+</html>
