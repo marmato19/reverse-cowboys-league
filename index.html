@@ -416,11 +416,16 @@
       margin-top:5px;
     }
 
+    /* =========================
+       GRID LAYOUTS
+    ========================== */
+
     .grid-2{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
       margin-top:12px;
+      align-items:start;
     }
 
     .grid-3{
@@ -428,6 +433,7 @@
       grid-template-columns:1fr 1.25fr .62fr;
       gap:12px;
       margin-top:12px;
+      align-items:start;
     }
 
     /* =========================
@@ -440,6 +446,7 @@
       border-radius:8px;
       background:linear-gradient(180deg,#0d171e,#091016);
       box-shadow:var(--shadow);
+      align-self:start;
     }
 
     .panel-head{
@@ -485,29 +492,30 @@
     ========================== */
 
     .table-wrap{
+      width:100%;
       overflow-x:auto;
     }
 
     table{
       width:100%;
       border-collapse:collapse;
-      min-width:650px;
     }
 
     th{
-      padding:11px 14px;
+      padding:11px 12px;
       background:#071016;
       color:#9aa5ac;
       font-size:10px;
       font-weight:700;
-      letter-spacing:.6px;
+      letter-spacing:.5px;
       text-align:left;
       text-transform:uppercase;
       border-bottom:1px solid #27343d;
+      white-space:nowrap;
     }
 
     td{
-      padding:12px 14px;
+      padding:12px;
       border-bottom:1px solid #24313a;
       font-size:12px;
       color:#d4dade;
@@ -566,6 +574,103 @@
 
     .secondary-stat{
       color:#c1c8cd;
+    }
+
+    /* Homepage tables are deliberately compact */
+    .home-table{
+      table-layout:fixed;
+    }
+
+    .home-table th,
+    .home-table td{
+      padding:10px 8px;
+      font-size:10.5px;
+    }
+
+    .home-table .player-name{
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .standings-home th:nth-child(1),
+    .standings-home td:nth-child(1){
+      width:9%;
+    }
+
+    .standings-home th:nth-child(2),
+    .standings-home td:nth-child(2){
+      width:34%;
+    }
+
+    .standings-home th:nth-child(3),
+    .standings-home td:nth-child(3){
+      width:20%;
+    }
+
+    .standings-home th:nth-child(4),
+    .standings-home td:nth-child(4){
+      width:18%;
+    }
+
+    .standings-home th:nth-child(5),
+    .standings-home td:nth-child(5){
+      width:19%;
+    }
+
+    .latest-home th:nth-child(1),
+    .latest-home td:nth-child(1){
+      width:12%;
+    }
+
+    .latest-home th:nth-child(2),
+    .latest-home td:nth-child(2){
+      width:56%;
+    }
+
+    .latest-home th:nth-child(3),
+    .latest-home td:nth-child(3){
+      width:32%;
+    }
+
+    .champions-home th:nth-child(1),
+    .champions-home td:nth-child(1){
+      width:19%;
+    }
+
+    .champions-home th:nth-child(2),
+    .champions-home td:nth-child(2){
+      width:42%;
+    }
+
+    .champions-home th:nth-child(3),
+    .champions-home td:nth-child(3){
+      width:20%;
+    }
+
+    .champions-home th:nth-child(4),
+    .champions-home td:nth-child(4){
+      width:19%;
+    }
+
+    .alltime-home th:nth-child(1),
+    .alltime-home td:nth-child(1){
+      width:10%;
+    }
+
+    .alltime-home th:nth-child(2),
+    .alltime-home td:nth-child(2){
+      width:42%;
+    }
+
+    .alltime-home th:nth-child(3),
+    .alltime-home td:nth-child(3){
+      width:24%;
+    }
+
+    .alltime-home th:nth-child(4),
+    .alltime-home td:nth-child(4){
+      width:24%;
     }
 
     /* =========================
@@ -1204,6 +1309,25 @@
         display:none;
       }
 
+      .full-standings-table th:nth-child(4),
+      .full-standings-table td:nth-child(4),
+      .full-standings-table th:nth-child(6),
+      .full-standings-table td:nth-child(6){
+        display:none;
+      }
+
+      .history-table th:nth-child(4),
+      .history-table td:nth-child(4),
+      .history-table th:nth-child(6),
+      .history-table td:nth-child(6){
+        display:none;
+      }
+
+      .alltime-full th:nth-child(3),
+      .alltime-full td:nth-child(3){
+        display:none;
+      }
+
     }
 
     @media(max-width:560px){
@@ -1279,6 +1403,58 @@
         padding-bottom:14px;
       }
 
+      .home-table th,
+      .home-table td{
+        font-size:9.5px;
+        padding:9px 6px;
+      }
+
+      .standings-home th:nth-child(4),
+      .standings-home td:nth-child(4){
+        display:none;
+      }
+
+      .standings-home th:nth-child(1),
+      .standings-home td:nth-child(1){
+        width:12%;
+      }
+
+      .standings-home th:nth-child(2),
+      .standings-home td:nth-child(2){
+        width:42%;
+      }
+
+      .standings-home th:nth-child(3),
+      .standings-home td:nth-child(3){
+        width:25%;
+      }
+
+      .standings-home th:nth-child(5),
+      .standings-home td:nth-child(5){
+        width:21%;
+      }
+
+      .full-standings-table th:nth-child(4),
+      .full-standings-table td:nth-child(4),
+      .full-standings-table th:nth-child(6),
+      .full-standings-table td:nth-child(6){
+        display:none;
+      }
+
+      .history-table th:nth-child(4),
+      .history-table td:nth-child(4),
+      .history-table th:nth-child(6),
+      .history-table td:nth-child(6){
+        display:none;
+      }
+
+      .alltime-full th:nth-child(3),
+      .alltime-full td:nth-child(3),
+      .alltime-full th:nth-child(5),
+      .alltime-full td:nth-child(5){
+        display:none;
+      }
+
     }
 
   </style>
@@ -1286,7 +1462,6 @@
 
 <body>
 
-  <!-- Converts white-background cowboy logo into gold -->
   <svg width="0" height="0" style="position:absolute">
     <filter id="logoGold" color-interpolation-filters="sRGB">
       <feColorMatrix
@@ -1299,10 +1474,6 @@
       />
     </filter>
   </svg>
-
-  <!-- =========================
-       HEADER
-  ========================== -->
 
   <header class="topbar">
     <div class="shell">
@@ -1350,10 +1521,6 @@
     </div>
   </header>
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
-
   <nav>
     <div class="shell nav-row">
 
@@ -1387,9 +1554,7 @@
 
   <main class="shell">
 
-    <!-- =========================
-         HOME
-    ========================== -->
+    <!-- HOME -->
 
     <section id="homePage" class="page active">
 
@@ -1399,9 +1564,7 @@
 
           <div class="hero-kicker">
             The race is
-            <span style="color:var(--gold2)">
-              on
-            </span>
+            <span style="color:var(--gold2)">on</span>
           </div>
 
           <div class="hero-title">
@@ -1462,9 +1625,7 @@
             <div class="panel-meta">2026 Season</div>
           </div>
 
-          <div id="standingsContainer" class="table-wrap">
-            <div class="loading">Loading standings...</div>
-          </div>
+          <div id="standingsContainer"></div>
 
         </div>
 
@@ -1553,9 +1714,7 @@
             <div class="panel-meta">2022–2025</div>
           </div>
 
-          <div id="homeChampions" class="table-wrap">
-            <div class="loading">Loading champions...</div>
-          </div>
+          <div id="homeChampions"></div>
 
         </div>
 
@@ -1569,9 +1728,7 @@
             <div class="panel-meta">Career Totals</div>
           </div>
 
-          <div id="homeAllTime" class="table-wrap">
-            <div class="loading">Loading leaderboard...</div>
-          </div>
+          <div id="homeAllTime"></div>
 
         </div>
 
@@ -1620,7 +1777,7 @@
             <span class="icon">ⓘ</span>
             About the League
           </div>
-          <div class="panel-meta">Rules & Scoring</div>
+          <div class="panel-meta">League Stats</div>
         </div>
 
         <div class="about-grid">
@@ -1630,11 +1787,11 @@
             <h4>League Format</h4>
 
             <ul>
-              <li>DraftKings NFL contests during the regular season</li>
-              <li>Weekly lineups submitted on DraftKings</li>
-              <li>Points based on DraftKings scoring</li>
-              <li>Standings tracked throughout the season</li>
-              <li>Year-end champion crowned after Week 18</li>
+              <li>Weekly contests tracked throughout the 2026 NFL season</li>
+              <li>Standings update directly from the league spreadsheet</li>
+              <li>Weekly results are recorded throughout the season</li>
+              <li>Historical seasons currently include 2022 through 2025</li>
+              <li>2026 results remain separate from completed-season records</li>
             </ul>
 
           </div>
@@ -1644,11 +1801,11 @@
             <h4>Scoring & Stats</h4>
 
             <ul>
-              <li>Total Points = season total across contests</li>
-              <li>Avg / Week = average score per contest</li>
+              <li>Total Points = season total across recorded contests</li>
+              <li>Avg / Week = average recorded contest score</li>
               <li>Weekly Wins = first-place finishes</li>
-              <li>Best Week = highest single-contest score</li>
-              <li>Earnings = total league winnings recorded</li>
+              <li>Best Week = highest recorded contest score</li>
+              <li>Earnings = recorded league earnings</li>
             </ul>
 
           </div>
@@ -1659,9 +1816,7 @@
 
     </section>
 
-    <!-- =========================
-         STANDINGS
-    ========================== -->
+    <!-- STANDINGS -->
 
     <section id="standingsPage" class="page">
 
@@ -1689,9 +1844,7 @@
 
     </section>
 
-    <!-- =========================
-         WEEKS
-    ========================== -->
+    <!-- WEEKS -->
 
     <section id="weeksPage" class="page">
 
@@ -1749,9 +1902,7 @@
 
     </section>
 
-    <!-- =========================
-         PLAYERS
-    ========================== -->
+    <!-- PLAYERS -->
 
     <section id="playersPage" class="page">
 
@@ -1832,9 +1983,7 @@
 
     </section>
 
-    <!-- =========================
-         HISTORY
-    ========================== -->
+    <!-- HISTORY -->
 
     <section id="historyPage" class="page">
 
@@ -1969,10 +2118,6 @@
 
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
   <footer class="footer">
 
     <div class="shell footer-row">
@@ -2027,7 +2172,9 @@
       history: []
     };
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================== */
 
     function activatePage(id){
 
@@ -2080,7 +2227,9 @@
 
       });
 
-    /* LOAD DATA */
+    /* =========================
+       LOAD DATA
+    ========================== */
 
     async function loadLeagueData(){
 
@@ -2101,11 +2250,7 @@
           history:data.history || []
         };
 
-        displayStandings(
-          leagueData.standings,
-          "standingsContainer",
-          8
-        );
+        displayHomeStandings();
 
         displayStandings(
           leagueData.standings,
@@ -2155,11 +2300,20 @@
 
     }
 
-    /* STANDINGS */
+    /* =========================
+       HOME STANDINGS
+    ========================== */
 
-    function displayStandings(rows,containerId,limit=null){
+    function displayHomeStandings(){
 
-      const container = document.getElementById(containerId);
+      const container =
+        document.getElementById("standingsContainer");
+
+      const rows = [...leagueData.standings].sort(
+        (a,b) =>
+          (Number(a["Rank"]) || 999) -
+          (Number(b["Rank"]) || 999)
+      );
 
       if(!rows.length){
 
@@ -2170,18 +2324,89 @@
 
       }
 
-      let sorted = [...rows].sort(
+      let html = `
+        <table class="home-table standings-home">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Points</th>
+              <th>Avg</th>
+              <th>Wins</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      rows.forEach((player,index) => {
+
+        const rank =
+          Number(player["Rank"]) ||
+          index + 1;
+
+        html += `
+          <tr>
+
+            <td>
+              ${rankBadge(rank)}
+            </td>
+
+            <td class="player-name">
+              ${escapeHtml(player["Player"] || "—")}
+            </td>
+
+            <td class="points">
+              ${formatNumber(player["Total Points"])}
+            </td>
+
+            <td>
+              ${formatNumber(player["Avg / Week"])}
+            </td>
+
+            <td>
+              ${formatWholeNumber(player["Weekly Wins"])}
+            </td>
+
+          </tr>
+        `;
+
+      });
+
+      html += `
+          </tbody>
+        </table>
+      `;
+
+      container.innerHTML = html;
+
+    }
+
+    /* =========================
+       FULL STANDINGS
+    ========================== */
+
+    function displayStandings(rows,containerId){
+
+      const container =
+        document.getElementById(containerId);
+
+      if(!rows.length){
+
+        container.innerHTML =
+          '<div class="loading">No standings available yet.</div>';
+
+        return;
+
+      }
+
+      const sorted = [...rows].sort(
         (a,b) =>
           (Number(a["Rank"]) || 999) -
           (Number(b["Rank"]) || 999)
       );
 
-      if(limit){
-        sorted = sorted.slice(0,limit);
-      }
-
       let html = `
-        <table>
+        <table class="full-standings-table">
           <thead>
             <tr>
               <th>#</th>
@@ -2270,26 +2495,34 @@
 
     }
 
-    /* HOME LEADERS */
+    /* =========================
+       HOME LEADERS
+    ========================== */
 
     function displayLeaders(){
 
-      const players = leagueData.players;
-
-      if(!players.length){
-        return;
-      }
+      const standings = leagueData.standings;
 
       document.getElementById("playerCount").textContent =
-        players.length;
+        leagueData.players.length ||
+        standings.length ||
+        "—";
 
-      const pointsPlayers = players.filter(
-        player => hasNumericValue(player["Total Points"])
+      /*
+        POINTS LEADER NOW USES STANDINGS
+        This is the same feed that powers
+        Current Standings.
+      */
+
+      const pointsRows = standings.filter(
+        player =>
+          player["Player"] &&
+          hasNumericValue(player["Total Points"])
       );
 
-      if(pointsPlayers.length){
+      if(pointsRows.length){
 
-        const leader = [...pointsPlayers].sort(
+        const leader = [...pointsRows].sort(
           (a,b) =>
             Number(b["Total Points"]) -
             Number(a["Total Points"])
@@ -2303,13 +2536,19 @@
 
       }
 
-      const winsPlayers = players.filter(
-        player => hasNumericValue(player["Weekly Wins"])
+      /*
+        Weekly wins also uses standings when available.
+      */
+
+      const winsRows = standings.filter(
+        player =>
+          player["Player"] &&
+          hasNumericValue(player["Weekly Wins"])
       );
 
-      if(winsPlayers.length){
+      if(winsRows.length){
 
-        const leader = [...winsPlayers].sort(
+        const leader = [...winsRows].sort(
           (a,b) =>
             Number(b["Weekly Wins"]) -
             Number(a["Weekly Wins"])
@@ -2323,13 +2562,19 @@
 
       }
 
-      const bestPlayers = players.filter(
-        player => hasNumericValue(player["Best Week"])
+      /*
+        Best Week uses standings as well.
+      */
+
+      const bestRows = standings.filter(
+        player =>
+          player["Player"] &&
+          hasNumericValue(player["Best Week"])
       );
 
-      if(bestPlayers.length){
+      if(bestRows.length){
 
-        const leader = [...bestPlayers].sort(
+        const leader = [...bestRows].sort(
           (a,b) =>
             Number(b["Best Week"]) -
             Number(a["Best Week"])
@@ -2345,7 +2590,9 @@
 
     }
 
-    /* LATEST WEEK */
+    /* =========================
+       LATEST WEEK
+    ========================== */
 
     function displayLatestWeek(){
 
@@ -2381,7 +2628,8 @@
           scoredRows.some(row => row["Week"] === contest)
       );
 
-      const latest = completed[completed.length - 1];
+      const latest =
+        completed[completed.length - 1];
 
       document.getElementById("latestWeekLabel").textContent =
         latest;
@@ -2394,7 +2642,9 @@
 
     }
 
-    /* WEEK PAGE */
+    /* =========================
+       WEEK PAGE
+    ========================== */
 
     function initializeWeeks(){
 
@@ -2507,7 +2757,7 @@
       }
 
       html += `
-        <table>
+        <table class="${showSummary ? "home-table latest-home" : ""}">
           <thead>
             <tr>
               <th>#</th>
@@ -2553,7 +2803,9 @@
 
     }
 
-    /* PLAYERS */
+    /* =========================
+       PLAYERS
+    ========================== */
 
     function displayPlayers(){
 
@@ -2794,7 +3046,9 @@
         }
       );
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================== */
 
     function initializeHistory(){
 
@@ -2877,7 +3131,7 @@
       }
 
       let html = `
-        <table>
+        <table class="history-table">
           <thead>
             <tr>
               <th>#</th>
@@ -3042,7 +3296,9 @@
 
     }
 
-    /* CHAMPIONS */
+    /* =========================
+       CHAMPIONS
+    ========================== */
 
     function getChampions(){
 
@@ -3061,11 +3317,11 @@
     function renderPastChampions(){
 
       document.getElementById("pastChampionsContainer").innerHTML =
-        championsTable(getChampions());
+        championsTable(getChampions(),false);
 
     }
 
-    function championsTable(champions){
+    function championsTable(champions,compact=false){
 
       if(!champions.length){
 
@@ -3074,6 +3330,56 @@
             No champion data available.
           </div>
         `;
+
+      }
+
+      if(compact){
+
+        let html = `
+          <table class="home-table champions-home">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Champion</th>
+                <th>Points</th>
+                <th>Earned</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        champions.forEach(champion => {
+
+          html += `
+            <tr>
+
+              <td class="points">
+                ${champion["Season"]}
+              </td>
+
+              <td class="player-name">
+                ${escapeHtml(champion["Player"])}
+              </td>
+
+              <td>
+                ${formatNumber(champion["Total Points"])}
+              </td>
+
+              <td>
+                ${formatMoney(champion["Earnings"])}
+              </td>
+
+            </tr>
+          `;
+
+        });
+
+        html += `
+            </tbody>
+          </table>
+        `;
+
+        return html;
 
       }
 
@@ -3130,7 +3436,9 @@
 
     }
 
-    /* ALL-TIME STATS */
+    /* =========================
+       ALL-TIME STATS
+    ========================== */
 
     function buildAllTimeStats(){
 
@@ -3180,7 +3488,8 @@
 
         if(hasNumericValue(row["Best Week"])){
 
-          const value = Number(row["Best Week"]);
+          const value =
+            Number(row["Best Week"]);
 
           if(
             playerStats.bestWeek === null ||
@@ -3204,11 +3513,11 @@
       );
 
       document.getElementById("allTimeContainer").innerHTML =
-        allTimeTable(stats);
+        allTimeTable(stats,false);
 
     }
 
-    function allTimeTable(stats){
+    function allTimeTable(stats,compact=false){
 
       if(!stats.length){
 
@@ -3220,8 +3529,58 @@
 
       }
 
+      if(compact){
+
+        let html = `
+          <table class="home-table alltime-home">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Points</th>
+                <th>Titles</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        stats.forEach((player,index) => {
+
+          html += `
+            <tr>
+
+              <td>
+                ${rankBadge(index + 1)}
+              </td>
+
+              <td class="player-name">
+                ${escapeHtml(player.player)}
+              </td>
+
+              <td class="points">
+                ${formatNumber(player.points)}
+              </td>
+
+              <td>
+                ${player.championships}
+              </td>
+
+            </tr>
+          `;
+
+        });
+
+        html += `
+            </tbody>
+          </table>
+        `;
+
+        return html;
+
+      }
+
       let html = `
-        <table>
+        <table class="alltime-full">
           <thead>
             <tr>
               <th>#</th>
@@ -3283,11 +3642,14 @@
 
     }
 
-    /* HISTORY LEADERS */
+    /* =========================
+       HISTORY LEADERS
+    ========================== */
 
     function renderHistoryLeaders(){
 
-      const stats = buildAllTimeStats();
+      const stats =
+        buildAllTimeStats();
 
       if(!stats.length){
         return;
@@ -3335,15 +3697,19 @@
 
     }
 
-    /* LEAGUE RECORDS */
+    /* =========================
+       LEAGUE RECORDS
+    ========================== */
 
     function getLeagueRecords(){
 
-      const stats = buildAllTimeStats();
+      const stats =
+        buildAllTimeStats();
 
-      const rows = leagueData.history.filter(
-        row => row["Player"]
-      );
+      const rows =
+        leagueData.history.filter(
+          row => row["Player"]
+        );
 
       if(!stats.length || !rows.length){
         return [];
@@ -3488,7 +3854,8 @@
         return;
       }
 
-      const records = getLeagueRecords();
+      const records =
+        getLeagueRecords();
 
       container.innerHTML = records
         .map(record => `
@@ -3516,29 +3883,44 @@
 
     }
 
-    /* HOME HISTORY */
+    /* =========================
+       HOME HISTORY
+    ========================== */
 
     function renderHomePolish(){
 
       document.getElementById("homeChampions").innerHTML =
-        championsTable(getChampions());
+        championsTable(
+          getChampions(),
+          true
+        );
 
-      const allTime = buildAllTimeStats()
-        .sort(
-          (a,b) =>
-            b.points -
-            a.points
-        )
-        .slice(0,6);
+      /*
+        NO .slice(0,6)
+        Every historical player is now shown.
+      */
+
+      const allTime =
+        buildAllTimeStats()
+          .sort(
+            (a,b) =>
+              b.points -
+              a.points
+          );
 
       document.getElementById("homeAllTime").innerHTML =
-        allTimeTable(allTime);
+        allTimeTable(
+          allTime,
+          true
+        );
 
       renderRecords("homeRecords");
 
     }
 
-    /* HELPERS */
+    /* =========================
+       HELPERS
+    ========================== */
 
     function hasNumericValue(value){
 
@@ -3601,7 +3983,9 @@
 
     }
 
-    /* START SITE */
+    /* =========================
+       START SITE
+    ========================== */
 
     loadLeagueData();
 
