@@ -63,10 +63,6 @@
       padding:0 18px;
     }
 
-    /* =========================
-       HEADER
-    ========================== */
-
     .topbar{
       position:relative;
       overflow:hidden;
@@ -187,22 +183,13 @@
       text-align:center;
       border:1px solid var(--gold);
       border-radius:4px;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(201,149,62,.13),
-          rgba(201,149,62,.035)
-        );
+      background:linear-gradient(180deg,rgba(201,149,62,.13),rgba(201,149,62,.035));
       color:var(--gold2);
       font-weight:700;
       font-size:12px;
       letter-spacing:1px;
       text-transform:uppercase;
     }
-
-    /* =========================
-       NAVIGATION
-    ========================== */
 
     nav{
       background:rgba(7,12,16,.96);
@@ -238,12 +225,7 @@
     .nav-button:hover,
     .nav-button.active{
       color:var(--gold2);
-      background:
-        linear-gradient(
-          180deg,
-          rgba(201,149,62,.07),
-          rgba(201,149,62,.015)
-        );
+      background:linear-gradient(180deg,rgba(201,149,62,.07),rgba(201,149,62,.015));
       border-bottom-color:var(--gold);
     }
 
@@ -280,10 +262,6 @@
       display:block;
     }
 
-    /* =========================
-       HOME HERO
-    ========================== */
-
     .hero-panel{
       position:relative;
       overflow:hidden;
@@ -294,17 +272,8 @@
       border:1px solid #34434d;
       border-radius:8px;
       background:
-        linear-gradient(
-          90deg,
-          rgba(201,149,62,.14),
-          rgba(17,28,35,.98) 38%,
-          rgba(12,20,26,.98)
-        ),
-        radial-gradient(
-          circle at 28% 60%,
-          rgba(201,149,62,.09),
-          transparent 35%
-        );
+        linear-gradient(90deg,rgba(201,149,62,.14),rgba(17,28,35,.98) 38%,rgba(12,20,26,.98)),
+        radial-gradient(circle at 28% 60%,rgba(201,149,62,.09),transparent 35%);
       box-shadow:var(--shadow);
       margin-bottom:12px;
     }
@@ -350,10 +319,6 @@
       pointer-events:none;
     }
 
-    /* =========================
-       STAT CARDS
-    ========================== */
-
     .stat-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -368,9 +333,7 @@
       border:1px solid #3a4a55;
       border-radius:7px;
       background:linear-gradient(180deg,#111b22,#0a1117);
-      box-shadow:
-        inset 0 1px rgba(255,255,255,.02),
-        0 10px 25px rgba(0,0,0,.22);
+      box-shadow:inset 0 1px rgba(255,255,255,.02),0 10px 25px rgba(0,0,0,.22);
       text-align:center;
     }
 
@@ -381,13 +344,7 @@
       right:28%;
       bottom:0;
       height:2px;
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          var(--gold),
-          transparent
-        );
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
     }
 
     .stat-icon{
@@ -414,11 +371,8 @@
       color:#9ba5ac;
       font-size:11px;
       margin-top:5px;
+      line-height:1.4;
     }
-
-    /* =========================
-       GRID LAYOUTS
-    ========================== */
 
     .grid-2{
       display:grid;
@@ -435,10 +389,6 @@
       margin-top:12px;
       align-items:start;
     }
-
-    /* =========================
-       PANELS
-    ========================== */
 
     .panel{
       overflow:hidden;
@@ -457,12 +407,7 @@
       min-height:46px;
       padding:0 14px;
       border-bottom:1px solid #36434d;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(201,149,62,.11),
-          rgba(12,20,27,.95) 45%
-        );
+      background:linear-gradient(90deg,rgba(201,149,62,.11),rgba(12,20,27,.95) 45%);
     }
 
     .panel-title{
@@ -486,10 +431,6 @@
       letter-spacing:.6px;
       text-transform:uppercase;
     }
-
-    /* =========================
-       TABLES
-    ========================== */
 
     .table-wrap{
       width:100%;
@@ -572,11 +513,6 @@
       color:var(--gold2);
     }
 
-    .secondary-stat{
-      color:#c1c8cd;
-    }
-
-    /* Homepage tables are deliberately compact */
     .home-table{
       table-layout:fixed;
     }
@@ -594,88 +530,52 @@
     }
 
     .standings-home th:nth-child(1),
-    .standings-home td:nth-child(1){
-      width:9%;
-    }
+    .standings-home td:nth-child(1){width:9%;}
 
     .standings-home th:nth-child(2),
-    .standings-home td:nth-child(2){
-      width:34%;
-    }
+    .standings-home td:nth-child(2){width:34%;}
 
     .standings-home th:nth-child(3),
-    .standings-home td:nth-child(3){
-      width:20%;
-    }
+    .standings-home td:nth-child(3){width:20%;}
 
     .standings-home th:nth-child(4),
-    .standings-home td:nth-child(4){
-      width:18%;
-    }
+    .standings-home td:nth-child(4){width:18%;}
 
     .standings-home th:nth-child(5),
-    .standings-home td:nth-child(5){
-      width:19%;
-    }
+    .standings-home td:nth-child(5){width:19%;}
 
     .latest-home th:nth-child(1),
-    .latest-home td:nth-child(1){
-      width:12%;
-    }
+    .latest-home td:nth-child(1){width:12%;}
 
     .latest-home th:nth-child(2),
-    .latest-home td:nth-child(2){
-      width:56%;
-    }
+    .latest-home td:nth-child(2){width:56%;}
 
     .latest-home th:nth-child(3),
-    .latest-home td:nth-child(3){
-      width:32%;
-    }
+    .latest-home td:nth-child(3){width:32%;}
 
     .champions-home th:nth-child(1),
-    .champions-home td:nth-child(1){
-      width:19%;
-    }
+    .champions-home td:nth-child(1){width:19%;}
 
     .champions-home th:nth-child(2),
-    .champions-home td:nth-child(2){
-      width:42%;
-    }
+    .champions-home td:nth-child(2){width:42%;}
 
     .champions-home th:nth-child(3),
-    .champions-home td:nth-child(3){
-      width:20%;
-    }
+    .champions-home td:nth-child(3){width:20%;}
 
     .champions-home th:nth-child(4),
-    .champions-home td:nth-child(4){
-      width:19%;
-    }
+    .champions-home td:nth-child(4){width:19%;}
 
     .alltime-home th:nth-child(1),
-    .alltime-home td:nth-child(1){
-      width:10%;
-    }
+    .alltime-home td:nth-child(1){width:10%;}
 
     .alltime-home th:nth-child(2),
-    .alltime-home td:nth-child(2){
-      width:42%;
-    }
+    .alltime-home td:nth-child(2){width:42%;}
 
     .alltime-home th:nth-child(3),
-    .alltime-home td:nth-child(3){
-      width:24%;
-    }
+    .alltime-home td:nth-child(3){width:24%;}
 
     .alltime-home th:nth-child(4),
-    .alltime-home td:nth-child(4){
-      width:24%;
-    }
-
-    /* =========================
-       EMPTY STATES
-    ========================== */
+    .alltime-home td:nth-child(4){width:24%;}
 
     .empty{
       margin:14px;
@@ -687,17 +587,11 @@
       text-align:center;
       padding:22px;
       background:
-        radial-gradient(
-          circle at 50% 120%,
-          rgba(201,149,62,.11),
-          transparent 44%
-        ),
+        radial-gradient(circle at 50% 120%,rgba(201,149,62,.11),transparent 44%),
         linear-gradient(180deg,#0b141b,#081016);
     }
 
-    .empty-icon{
-      font-size:28px;
-    }
+    .empty-icon{font-size:28px;}
 
     .empty-title{
       margin-top:10px;
@@ -712,10 +606,6 @@
       line-height:1.5;
     }
 
-    /* =========================
-       HISTORY TEASER
-    ========================== */
-
     .history-teaser{
       min-height:162px;
       padding:22px;
@@ -724,11 +614,7 @@
       gap:18px;
       align-items:center;
       background:
-        radial-gradient(
-          circle at 10% 100%,
-          rgba(201,149,62,.17),
-          transparent 28%
-        ),
+        radial-gradient(circle at 10% 100%,rgba(201,149,62,.17),transparent 28%),
         linear-gradient(160deg,#0b141a,#0b1014);
     }
 
@@ -745,9 +631,7 @@
       font-size:11px;
     }
 
-    .big-number{
-      text-align:center;
-    }
+    .big-number{text-align:center;}
 
     .big-number strong{
       font-size:38px;
@@ -779,10 +663,6 @@
       cursor:pointer;
     }
 
-    /* =========================
-       RECORDS
-    ========================== */
-
     .records{
       display:grid;
       grid-template-columns:repeat(6,1fr);
@@ -799,9 +679,7 @@
       text-align:center;
     }
 
-    .record-card .ri{
-      font-size:19px;
-    }
+    .record-card .ri{font-size:19px;}
 
     .record-card .rl{
       margin-top:7px;
@@ -823,16 +701,10 @@
       margin-top:5px;
       color:#9ba5ac;
       font-size:10px;
-      line-height:1.35;
+      line-height:1.4;
     }
 
-    /* =========================
-       QUICK LINKS
-    ========================== */
-
-    .quick-links{
-      padding:10px;
-    }
+    .quick-links{padding:10px;}
 
     .quick-link{
       width:100%;
@@ -856,10 +728,6 @@
       color:var(--gold2);
     }
 
-    /* =========================
-       ABOUT
-    ========================== */
-
     .about-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -870,9 +738,7 @@
       border-right:1px solid #2a3740;
     }
 
-    .about-col:last-child{
-      border-right:0;
-    }
+    .about-col:last-child{border-right:0;}
 
     .about-col h4{
       margin:0 0 9px;
@@ -890,22 +756,12 @@
       line-height:1.8;
     }
 
-    /* =========================
-       PAGE HEADERS
-    ========================== */
-
     .page-hero{
       margin-bottom:12px;
       padding:20px;
       border:1px solid #34424c;
       border-radius:8px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(201,149,62,.13),
-          #0e171d 40%,
-          #091016
-        );
+      background:linear-gradient(90deg,rgba(201,149,62,.13),#0e171d 40%,#091016);
     }
 
     .eyebrow{
@@ -929,10 +785,6 @@
       font-size:12px;
       line-height:1.5;
     }
-
-    /* =========================
-       SELECTORS
-    ========================== */
 
     .selector-box{
       margin-bottom:12px;
@@ -964,10 +816,6 @@
       font-weight:700;
       font-size:12px;
     }
-
-    /* =========================
-       PLAYER CARDS
-    ========================== */
 
     .players-grid{
       display:grid;
@@ -1050,9 +898,7 @@
       text-transform:uppercase;
     }
 
-    #playerProfileView{
-      display:none;
-    }
+    #playerProfileView{display:none;}
 
     .back-button{
       margin-bottom:12px;
@@ -1077,12 +923,7 @@
       border:1px solid #34424c;
       border-left:4px solid var(--gold);
       border-radius:8px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(201,149,62,.11),
-          #0e171d
-        );
+      background:linear-gradient(90deg,rgba(201,149,62,.11),#0e171d);
       margin-bottom:12px;
     }
 
@@ -1105,10 +946,6 @@
       color:var(--gold2);
     }
 
-    /* =========================
-       HISTORY
-    ========================== */
-
     .history-champion{
       display:flex;
       justify-content:space-between;
@@ -1119,13 +956,7 @@
       border:1px solid var(--gold3);
       border-left:5px solid var(--gold);
       border-radius:8px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(201,149,62,.16),
-          #111a20 45%,
-          #091016
-        );
+      background:linear-gradient(90deg,rgba(201,149,62,.16),#111a20 45%,#091016);
     }
 
     .champion-label{
@@ -1150,9 +981,7 @@
       line-height:1.5;
     }
 
-    .champion-trophy{
-      font-size:35px;
-    }
+    .champion-trophy{font-size:35px;}
 
     .history-summary-cards{
       display:grid;
@@ -1160,10 +989,6 @@
       gap:10px;
       margin-bottom:12px;
     }
-
-    /* =========================
-       FOOTER
-    ========================== */
 
     .footer{
       margin-top:16px;
@@ -1179,9 +1004,7 @@
       gap:16px;
     }
 
-    .footer-brand{
-      text-align:center;
-    }
+    .footer-brand{text-align:center;}
 
     .footer-brand strong{
       display:block;
@@ -1214,100 +1037,35 @@
       font-size:12px;
     }
 
-    .error{
-      color:var(--danger);
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
+    .error{color:var(--danger);}
 
     @media(max-width:1050px){
-
-      .hero-panel{
-        grid-template-columns:1fr;
-      }
-
-      .grid-3{
-        grid-template-columns:1fr;
-      }
-
-      .records{
-        grid-template-columns:repeat(3,1fr);
-      }
-
-      .mast{
-        grid-template-columns:110px 1fr auto;
-      }
-
-      .logo-wrap{
-        width:105px;
-        height:105px;
-      }
-
-      .logo{
-        width:105px;
-        height:105px;
-      }
-
-      .logo-wrap:before{
-        width:92px;
-        height:92px;
-      }
-
-      .brand-title{
-        font-size:42px;
-      }
-
+      .hero-panel{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr;}
+      .records{grid-template-columns:repeat(3,1fr);}
+      .mast{grid-template-columns:110px 1fr auto;}
+      .logo-wrap{width:105px;height:105px;}
+      .logo{width:105px;height:105px;}
+      .logo-wrap:before{width:92px;height:92px;}
+      .brand-title{font-size:42px;}
     }
 
     @media(max-width:820px){
-
-      .stat-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .grid-2{
-        grid-template-columns:1fr;
-      }
-
-      .players-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .history-summary-cards{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
+      .stat-grid{grid-template-columns:repeat(2,1fr);}
+      .grid-2{grid-template-columns:1fr;}
+      .players-grid{grid-template-columns:repeat(2,1fr);}
+      .history-summary-cards{grid-template-columns:repeat(2,1fr);}
+      .about-grid{grid-template-columns:1fr;}
       .about-col{
         border-right:0;
         border-bottom:1px solid #2a3740;
       }
-
-      .mast{
-        grid-template-columns:85px 1fr;
-      }
-
-      .season-box{
-        display:none;
-      }
-
-      .brand-title{
-        font-size:34px;
-      }
-
+      .mast{grid-template-columns:85px 1fr;}
+      .season-box{display:none;}
+      .brand-title{font-size:34px;}
       .brand-sub:before,
-      .brand-sub:after{
-        display:none;
-      }
-
-      .live-data{
-        display:none;
-      }
+      .brand-sub:after{display:none;}
+      .live-data{display:none;}
 
       .full-standings-table th:nth-child(4),
       .full-standings-table td:nth-child(4),
@@ -1327,14 +1085,10 @@
       .alltime-full td:nth-child(3){
         display:none;
       }
-
     }
 
     @media(max-width:560px){
-
-      .shell{
-        padding:0 10px;
-      }
+      .shell{padding:0 10px;}
 
       .mast{
         grid-template-columns:68px 1fr;
@@ -1343,20 +1097,9 @@
         padding:12px 0;
       }
 
-      .logo-wrap{
-        width:66px;
-        height:66px;
-      }
-
-      .logo-wrap:before{
-        width:58px;
-        height:58px;
-      }
-
-      .logo{
-        width:70px;
-        height:70px;
-      }
+      .logo-wrap{width:66px;height:66px;}
+      .logo-wrap:before{width:58px;height:58px;}
+      .logo{width:70px;height:70px;}
 
       .brand-title{
         font-size:25px;
@@ -1378,25 +1121,11 @@
         font-size:9px;
       }
 
-      .hero-title{
-        font-size:36px;
-      }
-
-      .players-grid{
-        grid-template-columns:1fr;
-      }
-
-      .records{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .history-summary-cards{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .footer-row{
-        grid-template-columns:1fr;
-      }
+      .hero-title{font-size:36px;}
+      .players-grid{grid-template-columns:1fr;}
+      .records{grid-template-columns:repeat(2,1fr);}
+      .history-summary-cards{grid-template-columns:1fr 1fr;}
+      .footer-row{grid-template-columns:1fr;}
 
       .footer-note{
         justify-self:center;
@@ -1415,24 +1144,16 @@
       }
 
       .standings-home th:nth-child(1),
-      .standings-home td:nth-child(1){
-        width:12%;
-      }
+      .standings-home td:nth-child(1){width:12%;}
 
       .standings-home th:nth-child(2),
-      .standings-home td:nth-child(2){
-        width:42%;
-      }
+      .standings-home td:nth-child(2){width:42%;}
 
       .standings-home th:nth-child(3),
-      .standings-home td:nth-child(3){
-        width:25%;
-      }
+      .standings-home td:nth-child(3){width:25%;}
 
       .standings-home th:nth-child(5),
-      .standings-home td:nth-child(5){
-        width:21%;
-      }
+      .standings-home td:nth-child(5){width:21%;}
 
       .full-standings-table th:nth-child(4),
       .full-standings-table td:nth-child(4),
@@ -1454,9 +1175,7 @@
       .alltime-full td:nth-child(5){
         display:none;
       }
-
     }
-
   </style>
 </head>
 
@@ -1477,72 +1196,35 @@
 
   <header class="topbar">
     <div class="shell">
-
       <div class="mast">
 
         <div class="logo-wrap">
-          <img
-            class="logo"
-            src="cowboys%20logo.png"
-            alt="Reverse Cowboys logo"
-          >
+          <img class="logo" src="cowboys%20logo.png" alt="Reverse Cowboys logo">
         </div>
 
         <div>
-
-          <div class="brand-kicker">
-            Fantasy Football League
-          </div>
-
-          <div class="brand-title">
-            <span>REVERSE</span> COWBOYS
-          </div>
-
-          <div class="brand-sub">
-            DraftKings NFL League
-          </div>
-
+          <div class="brand-kicker">Fantasy Football League</div>
+          <div class="brand-title"><span>REVERSE</span> COWBOYS</div>
+          <div class="brand-sub">DraftKings NFL League</div>
         </div>
 
         <div>
-
-          <div class="est">
-            ★ EST. 2022 ★
-          </div>
-
-          <div class="season-box">
-            🏈 2026 Season
-          </div>
-
+          <div class="est">★ EST. 2022 ★</div>
+          <div class="season-box">🏈 2026 Season</div>
         </div>
 
       </div>
-
     </div>
   </header>
 
   <nav>
     <div class="shell nav-row">
 
-      <button class="nav-button active" data-page="homePage">
-        ⌂ Home
-      </button>
-
-      <button class="nav-button" data-page="standingsPage">
-        🏆 Standings
-      </button>
-
-      <button class="nav-button" data-page="weeksPage">
-        ▦ Weeks
-      </button>
-
-      <button class="nav-button" data-page="playersPage">
-        ♟ Players
-      </button>
-
-      <button class="nav-button" data-page="historyPage">
-        ◔ History
-      </button>
+      <button class="nav-button active" data-page="homePage">⌂ Home</button>
+      <button class="nav-button" data-page="standingsPage">🏆 Standings</button>
+      <button class="nav-button" data-page="weeksPage">▦ Weeks</button>
+      <button class="nav-button" data-page="playersPage">♟ Players</button>
+      <button class="nav-button" data-page="historyPage">◔ History</button>
 
       <div class="live-data">
         <span class="live-dot"></span>
@@ -1554,29 +1236,20 @@
 
   <main class="shell">
 
-    <!-- HOME -->
-
     <section id="homePage" class="page active">
 
       <div class="hero-panel">
 
         <div class="hero-copy">
-
           <div class="hero-kicker">
-            The race is
-            <span style="color:var(--gold2)">on</span>
+            The race is <span style="color:var(--gold2)">on</span>
           </div>
 
           <div class="hero-title">
             <span>2026</span> Season
           </div>
 
-          <img
-            class="hero-mini-logo"
-            src="cowboys%20logo.png"
-            alt=""
-          >
-
+          <img class="hero-mini-logo" src="cowboys%20logo.png" alt="">
         </div>
 
         <div class="stat-grid">
@@ -1616,7 +1289,6 @@
       <div class="grid-2">
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">🏆</span>
@@ -1624,13 +1296,10 @@
             </div>
             <div class="panel-meta">2026 Season</div>
           </div>
-
           <div id="standingsContainer"></div>
-
         </div>
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">▦</span>
@@ -1638,11 +1307,9 @@
             </div>
             <div id="latestWeekLabel" class="panel-meta">—</div>
           </div>
-
           <div id="latestWeekContainer">
             <div class="loading">Loading latest results...</div>
           </div>
-
         </div>
 
       </div>
@@ -1650,40 +1317,26 @@
       <div class="grid-2">
 
         <div class="panel">
-
           <div class="history-teaser">
 
             <div>
-
               <h3>🏛 League History</h3>
-
-              <p>
-                Champions. Legends. Records.
-              </p>
+              <p>Champions. Legends. Records.</p>
 
               <button class="cta" data-jump="historyPage">
                 View History →
               </button>
-
             </div>
 
             <div class="big-number">
-
               <strong>4</strong>
-
-              <span>
-                Completed Seasons<br>
-                2022–2025
-              </span>
-
+              <span>Completed Seasons<br>2022–2025</span>
             </div>
 
           </div>
-
         </div>
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">🎖</span>
@@ -1697,7 +1350,6 @@
               Loading records...
             </div>
           </div>
-
         </div>
 
       </div>
@@ -1705,7 +1357,6 @@
       <div class="grid-3">
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">♛</span>
@@ -1713,13 +1364,10 @@
             </div>
             <div class="panel-meta">2022–2025</div>
           </div>
-
           <div id="homeChampions"></div>
-
         </div>
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">▥</span>
@@ -1727,13 +1375,10 @@
             </div>
             <div class="panel-meta">Career Totals</div>
           </div>
-
           <div id="homeAllTime"></div>
-
         </div>
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">⚡</span>
@@ -1765,7 +1410,6 @@
             </button>
 
           </div>
-
         </div>
 
       </div>
@@ -1783,9 +1427,7 @@
         <div class="about-grid">
 
           <div class="about-col">
-
             <h4>League Format</h4>
-
             <ul>
               <li>Weekly contests tracked throughout the 2026 NFL season</li>
               <li>Standings update directly from the league spreadsheet</li>
@@ -1793,13 +1435,10 @@
               <li>Historical seasons currently include 2022 through 2025</li>
               <li>2026 results remain separate from completed-season records</li>
             </ul>
-
           </div>
 
           <div class="about-col">
-
             <h4>Scoring & Stats</h4>
-
             <ul>
               <li>Total Points = season total across recorded contests</li>
               <li>Avg / Week = average recorded contest score</li>
@@ -1807,7 +1446,6 @@
               <li>Best Week = highest recorded contest score</li>
               <li>Earnings = recorded league earnings</li>
             </ul>
-
           </div>
 
         </div>
@@ -1815,8 +1453,6 @@
       </div>
 
     </section>
-
-    <!-- STANDINGS -->
 
     <section id="standingsPage" class="page">
 
@@ -1827,7 +1463,6 @@
       </div>
 
       <div class="panel">
-
         <div class="panel-head">
           <div class="panel-title">
             <span class="icon">🏆</span>
@@ -1839,12 +1474,9 @@
         <div id="fullStandingsContainer" class="table-wrap">
           <div class="loading">Loading standings...</div>
         </div>
-
       </div>
 
     </section>
-
-    <!-- WEEKS -->
 
     <section id="weeksPage" class="page">
 
@@ -1886,7 +1518,6 @@
       </div>
 
       <div class="panel">
-
         <div class="panel-head">
           <div id="selectedWeekTitle" class="panel-title">
             Week 1 Results
@@ -1897,12 +1528,9 @@
         <div id="weekResultsContainer">
           <div class="loading">Loading results...</div>
         </div>
-
       </div>
 
     </section>
-
-    <!-- PLAYERS -->
 
     <section id="playersPage" class="page">
 
@@ -1964,7 +1592,6 @@
         </div>
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">▥</span>
@@ -1976,14 +1603,11 @@
           <div id="profileResultsContainer" class="table-wrap">
             <div class="loading">Loading player results...</div>
           </div>
-
         </div>
 
       </div>
 
     </section>
-
-    <!-- HISTORY -->
 
     <section id="historyPage" class="page">
 
@@ -2081,7 +1705,6 @@
       <div class="grid-2">
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">♛</span>
@@ -2093,11 +1716,9 @@
           <div id="pastChampionsContainer" class="table-wrap">
             <div class="loading">Loading champions...</div>
           </div>
-
         </div>
 
         <div class="panel">
-
           <div class="panel-head">
             <div class="panel-title">
               <span class="icon">▥</span>
@@ -2109,7 +1730,6 @@
           <div id="allTimeContainer" class="table-wrap">
             <div class="loading">Loading all-time statistics...</div>
           </div>
-
         </div>
 
       </div>
@@ -2119,7 +1739,6 @@
   </main>
 
   <footer class="footer">
-
     <div class="shell footer-row">
 
       <div></div>
@@ -2134,7 +1753,6 @@
       </div>
 
     </div>
-
   </footer>
 
   <script>
@@ -2143,26 +1761,11 @@
       "https://script.google.com/macros/s/AKfycbwboeUmMTcgpKO3ZLnwmRWIebSEDUsgRzCrH-sgU32IldIl_nbLVi5YbmAN26Jsj5sj/exec";
 
     const CONTEST_ORDER = [
-      "Week 1",
-      "Week 2",
-      "Week 3",
-      "Week 4",
-      "Week 5",
-      "Week 6",
-      "Week 7",
-      "Week 8",
-      "Week 9",
-      "Week 10",
-      "Week 11",
-      "Week 12",
-      "Thanksgiving",
-      "Week 13",
-      "Week 14",
-      "Week 15",
-      "Week 16",
-      "Christmas",
-      "Week 17",
-      "Week 18"
+      "Week 1","Week 2","Week 3","Week 4","Week 5",
+      "Week 6","Week 7","Week 8","Week 9","Week 10",
+      "Week 11","Week 12","Thanksgiving","Week 13",
+      "Week 14","Week 15","Week 16","Christmas",
+      "Week 17","Week 18"
     ];
 
     let leagueData = {
@@ -2171,10 +1774,6 @@
       players: [],
       history: []
     };
-
-    /* =========================
-       NAVIGATION
-    ========================== */
 
     function activatePage(id){
 
@@ -2186,9 +1785,7 @@
         .querySelectorAll(".nav-button")
         .forEach(x => x.classList.remove("active"));
 
-      document
-        .getElementById(id)
-        ?.classList.add("active");
+      document.getElementById(id)?.classList.add("active");
 
       document
         .querySelector(`.nav-button[data-page="${id}"]`)
@@ -2226,10 +1823,6 @@
         );
 
       });
-
-    /* =========================
-       LOAD DATA
-    ========================== */
 
     async function loadLeagueData(){
 
@@ -2300,10 +1893,6 @@
 
     }
 
-    /* =========================
-       HOME STANDINGS
-    ========================== */
-
     function displayHomeStandings(){
 
       const container =
@@ -2346,10 +1935,7 @@
 
         html += `
           <tr>
-
-            <td>
-              ${rankBadge(rank)}
-            </td>
+            <td>${rankBadge(rank)}</td>
 
             <td class="player-name">
               ${escapeHtml(player["Player"] || "—")}
@@ -2366,7 +1952,6 @@
             <td>
               ${formatWholeNumber(player["Weekly Wins"])}
             </td>
-
           </tr>
         `;
 
@@ -2380,10 +1965,6 @@
       container.innerHTML = html;
 
     }
-
-    /* =========================
-       FULL STANDINGS
-    ========================== */
 
     function displayStandings(rows,containerId){
 
@@ -2444,9 +2025,7 @@
       return `
         <tr>
 
-          <td>
-            ${rankBadge(rank)}
-          </td>
+          <td>${rankBadge(rank)}</td>
 
           <td class="player-name">
             ${escapeHtml(player["Player"] || "—")}
@@ -2495,10 +2074,6 @@
 
     }
 
-    /* =========================
-       HOME LEADERS
-    ========================== */
-
     function displayLeaders(){
 
       const standings = leagueData.standings;
@@ -2508,12 +2083,6 @@
         standings.length ||
         "—";
 
-      /*
-        POINTS LEADER NOW USES STANDINGS
-        This is the same feed that powers
-        Current Standings.
-      */
-
       const pointsRows = standings.filter(
         player =>
           player["Player"] &&
@@ -2522,23 +2091,23 @@
 
       if(pointsRows.length){
 
-        const leader = [...pointsRows].sort(
-          (a,b) =>
-            Number(b["Total Points"]) -
-            Number(a["Total Points"])
-        )[0];
+        const max =
+          Math.max(
+            ...pointsRows.map(x => Number(x["Total Points"]))
+          );
+
+        const leaders =
+          pointsRows.filter(
+            x => Number(x["Total Points"]) === max
+          );
 
         document.getElementById("pointsLeader").textContent =
-          formatNumber(leader["Total Points"]);
+          formatNumber(max);
 
         document.getElementById("pointsLeaderName").textContent =
-          leader["Player"];
+          formatNameList(leaders.map(x => x["Player"]));
 
       }
-
-      /*
-        Weekly wins also uses standings when available.
-      */
 
       const winsRows = standings.filter(
         player =>
@@ -2548,23 +2117,23 @@
 
       if(winsRows.length){
 
-        const leader = [...winsRows].sort(
-          (a,b) =>
-            Number(b["Weekly Wins"]) -
-            Number(a["Weekly Wins"])
-        )[0];
+        const max =
+          Math.max(
+            ...winsRows.map(x => Number(x["Weekly Wins"]))
+          );
+
+        const leaders =
+          winsRows.filter(
+            x => Number(x["Weekly Wins"]) === max
+          );
 
         document.getElementById("winsLeader").textContent =
-          formatWholeNumber(leader["Weekly Wins"]);
+          formatWholeNumber(max);
 
         document.getElementById("winsLeaderName").textContent =
-          leader["Player"];
+          formatNameList(leaders.map(x => x["Player"]));
 
       }
-
-      /*
-        Best Week uses standings as well.
-      */
 
       const bestRows = standings.filter(
         player =>
@@ -2574,25 +2143,25 @@
 
       if(bestRows.length){
 
-        const leader = [...bestRows].sort(
-          (a,b) =>
-            Number(b["Best Week"]) -
-            Number(a["Best Week"])
-        )[0];
+        const max =
+          Math.max(
+            ...bestRows.map(x => Number(x["Best Week"]))
+          );
+
+        const leaders =
+          bestRows.filter(
+            x => Number(x["Best Week"]) === max
+          );
 
         document.getElementById("bestWeek").textContent =
-          formatNumber(leader["Best Week"]);
+          formatNumber(max);
 
         document.getElementById("bestWeekName").textContent =
-          leader["Player"];
+          formatNameList(leaders.map(x => x["Player"]));
 
       }
 
     }
-
-    /* =========================
-       LATEST WEEK
-    ========================== */
 
     function displayLatestWeek(){
 
@@ -2641,10 +2210,6 @@
       );
 
     }
-
-    /* =========================
-       WEEK PAGE
-    ========================== */
 
     function initializeWeeks(){
 
@@ -2777,9 +2342,7 @@
         html += `
           <tr>
 
-            <td>
-              ${rankBadge(rank)}
-            </td>
+            <td>${rankBadge(rank)}</td>
 
             <td class="player-name">
               ${escapeHtml(row["Player"])}
@@ -2802,10 +2365,6 @@
       container.innerHTML = html;
 
     }
-
-    /* =========================
-       PLAYERS
-    ========================== */
 
     function displayPlayers(){
 
@@ -2855,36 +2414,28 @@
               <div class="player-card-stats">
 
                 <div>
-                  <div class="mini-stat-label">
-                    Total Points
-                  </div>
+                  <div class="mini-stat-label">Total Points</div>
                   <div class="mini-stat-value">
                     ${formatNumber(player["Total Points"])}
                   </div>
                 </div>
 
                 <div>
-                  <div class="mini-stat-label">
-                    Avg / Week
-                  </div>
+                  <div class="mini-stat-label">Avg / Week</div>
                   <div class="mini-stat-value">
                     ${formatNumber(player["Avg / Week"])}
                   </div>
                 </div>
 
                 <div>
-                  <div class="mini-stat-label">
-                    Weekly Wins
-                  </div>
+                  <div class="mini-stat-label">Weekly Wins</div>
                   <div class="mini-stat-value">
                     ${formatWholeNumber(player["Weekly Wins"])}
                   </div>
                 </div>
 
                 <div>
-                  <div class="mini-stat-label">
-                    Best Week
-                  </div>
+                  <div class="mini-stat-label">Best Week</div>
                   <div class="mini-stat-value">
                     ${formatNumber(player["Best Week"])}
                   </div>
@@ -3046,10 +2597,6 @@
         }
       );
 
-    /* =========================
-       HISTORY
-    ========================== */
-
     function initializeHistory(){
 
       const selector =
@@ -3151,9 +2698,7 @@
         html += `
           <tr>
 
-            <td>
-              ${rankBadge(Number(row["Rank"]))}
-            </td>
+            <td>${rankBadge(Number(row["Rank"]))}</td>
 
             <td class="player-name">
               ${escapeHtml(row["Player"])}
@@ -3195,19 +2740,36 @@
 
     function renderHistoricalChampion(rows,season){
 
-      const champion = rows.find(
+      const champions = rows.filter(
         row => Number(row["Rank"]) === 1
       );
 
       const container =
         document.getElementById("historyChampionCard");
 
-      if(!champion){
+      if(!champions.length){
 
         container.innerHTML = "";
         return;
 
       }
+
+      const points =
+        champions.length === 1
+          ? formatNumber(champions[0]["Total Points"])
+          : formatNumber(champions[0]["Total Points"]);
+
+      const wins =
+        champions.length === 1
+          ? formatWholeNumber(champions[0]["Weekly Wins"])
+          : formatWholeNumber(champions[0]["Weekly Wins"]);
+
+      const earnings =
+        champions.length === 1
+          ? formatMoney(champions[0]["Earnings"])
+          : champions
+              .map(x => `${x["Player"]}: ${formatMoney(x["Earnings"])}`)
+              .join(" • ");
 
       container.innerHTML = `
         <div class="history-champion">
@@ -3215,27 +2777,19 @@
           <div>
 
             <div class="champion-label">
-              ${season} League Champion
+              ${season} League Champion${champions.length > 1 ? "s" : ""}
             </div>
 
             <div class="champion-name">
-              ${escapeHtml(champion["Player"])}
+              ${escapeHtml(formatNameList(champions.map(x => x["Player"])))}
             </div>
 
             <div class="champion-meta">
-
-              ${formatNumber(champion["Total Points"])}
-              total points
-
+              ${points} total points
               •
-
-              ${formatWholeNumber(champion["Weekly Wins"])}
-              weekly wins
-
+              ${wins} weekly wins
               •
-
-              ${formatMoney(champion["Earnings"])}
-
+              ${escapeHtml(earnings)}
             </div>
 
           </div>
@@ -3251,21 +2805,30 @@
 
     function renderCurrentLeader(){
 
-      const leader = [...leagueData.standings].sort(
-        (a,b) =>
-          (Number(a["Rank"]) || 999) -
-          (Number(b["Rank"]) || 999)
-      )[0];
+      const valid =
+        leagueData.standings.filter(
+          row => hasNumericValue(row["Total Points"])
+        );
 
       const container =
         document.getElementById("historyChampionCard");
 
-      if(!leader){
+      if(!valid.length){
 
         container.innerHTML = "";
         return;
 
       }
+
+      const max =
+        Math.max(
+          ...valid.map(x => Number(x["Total Points"]))
+        );
+
+      const leaders =
+        valid.filter(
+          x => Number(x["Total Points"]) === max
+        );
 
       container.innerHTML = `
         <div class="history-champion">
@@ -3273,16 +2836,15 @@
           <div>
 
             <div class="champion-label">
-              Current 2026 Leader
+              Current 2026 Leader${leaders.length > 1 ? "s" : ""}
             </div>
 
             <div class="champion-name">
-              ${escapeHtml(leader["Player"])}
+              ${escapeHtml(formatNameList(leaders.map(x => x["Player"])))}
             </div>
 
             <div class="champion-meta">
-              ${formatNumber(leader["Total Points"])}
-              current points
+              ${formatNumber(max)} current points
             </div>
 
           </div>
@@ -3295,10 +2857,6 @@
       `;
 
     }
-
-    /* =========================
-       CHAMPIONS
-    ========================== */
 
     function getChampions(){
 
@@ -3436,10 +2994,6 @@
 
     }
 
-    /* =========================
-       ALL-TIME STATS
-    ========================== */
-
     function buildAllTimeStats(){
 
       const stats = {};
@@ -3550,7 +3104,7 @@
             <tr>
 
               <td>
-                ${rankBadge(index + 1)}
+                ${rankBadge(getCompetitionRank(stats,index,"points"))}
               </td>
 
               <td class="player-name">
@@ -3601,7 +3155,7 @@
           <tr>
 
             <td>
-              ${rankBadge(index + 1)}
+              ${rankBadge(getCompetitionRank(stats,index,"points"))}
             </td>
 
             <td class="player-name">
@@ -3642,10 +3196,6 @@
 
     }
 
-    /* =========================
-       HISTORY LEADERS
-    ========================== */
-
     function renderHistoryLeaders(){
 
       const stats =
@@ -3655,51 +3205,61 @@
         return;
       }
 
-      const championshipLeader = [...stats].sort(
-        (a,b) =>
-          b.championships -
-          a.championships ||
-          b.points -
-          a.points
-      )[0];
+      const maxChampionships =
+        Math.max(
+          ...stats.map(x => x.championships)
+        );
 
-      const pointsLeader = [...stats].sort(
-        (a,b) =>
-          b.points -
-          a.points
-      )[0];
+      const championshipLeaders =
+        stats.filter(
+          x => x.championships === maxChampionships
+        );
 
-      const winsLeader = [...stats].sort(
-        (a,b) =>
-          b.wins -
-          a.wins ||
-          b.points -
-          a.points
-      )[0];
+      const maxPoints =
+        Math.max(
+          ...stats.map(x => x.points)
+        );
+
+      const pointsLeaders =
+        stats.filter(
+          x => x.points === maxPoints
+        );
+
+      const maxWins =
+        Math.max(
+          ...stats.map(x => x.wins)
+        );
+
+      const winsLeaders =
+        stats.filter(
+          x => x.wins === maxWins
+        );
 
       document.getElementById("historyChampionshipCount").textContent =
-        championshipLeader.championships;
+        maxChampionships;
 
       document.getElementById("historyChampionshipLeader").textContent =
-        championshipLeader.player;
+        formatNameList(
+          championshipLeaders.map(x => x.player)
+        );
 
       document.getElementById("historyPointsValue").textContent =
-        formatNumber(pointsLeader.points);
+        formatNumber(maxPoints);
 
       document.getElementById("historyPointsLeader").textContent =
-        pointsLeader.player;
+        formatNameList(
+          pointsLeaders.map(x => x.player)
+        );
 
       document.getElementById("historyWinsValue").textContent =
-        formatWholeNumber(winsLeader.wins);
+        formatWholeNumber(maxWins);
 
       document.getElementById("historyWinsLeader").textContent =
-        winsLeader.player;
+        formatNameList(
+          winsLeaders.map(x => x.player)
+        );
 
     }
-
-    /* =========================
-       LEAGUE RECORDS
-    ========================== */
 
     function getLeagueRecords(){
 
@@ -3715,51 +3275,44 @@
         return [];
       }
 
-      const bestWeek = [...rows]
-        .filter(row => hasNumericValue(row["Best Week"]))
-        .sort(
-          (a,b) =>
-            Number(b["Best Week"]) -
-            Number(a["Best Week"])
-        )[0];
+      const bestWeekRows =
+        getTiedRows(
+          rows,
+          row => Number(row["Best Week"]),
+          row => hasNumericValue(row["Best Week"])
+        );
 
-      const bestSeason = [...rows]
-        .filter(row => hasNumericValue(row["Total Points"]))
-        .sort(
-          (a,b) =>
-            Number(b["Total Points"]) -
-            Number(a["Total Points"])
-        )[0];
+      const bestSeasonRows =
+        getTiedRows(
+          rows,
+          row => Number(row["Total Points"]),
+          row => hasNumericValue(row["Total Points"])
+        );
 
-      const mostSeasonWins = [...rows]
-        .filter(row => hasNumericValue(row["Weekly Wins"]))
-        .sort(
-          (a,b) =>
-            Number(b["Weekly Wins"]) -
-            Number(a["Weekly Wins"])
-        )[0];
+      const seasonWinsRows =
+        getTiedRows(
+          rows,
+          row => Number(row["Weekly Wins"]),
+          row => hasNumericValue(row["Weekly Wins"])
+        );
 
-      const earningsLeader = [...stats].sort(
-        (a,b) =>
-          b.earnings -
-          a.earnings
-      )[0];
+      const earningsLeaders =
+        getTiedRows(
+          stats,
+          row => row.earnings
+        );
 
-      const titleLeader = [...stats].sort(
-        (a,b) =>
-          b.championships -
-          a.championships ||
-          b.points -
-          a.points
-      )[0];
+      const titleLeaders =
+        getTiedRows(
+          stats,
+          row => row.championships
+        );
 
-      const seasonsLeader = [...stats].sort(
-        (a,b) =>
-          b.seasons -
-          a.seasons ||
-          b.points -
-          a.points
-      )[0];
+      const seasonsLeaders =
+        getTiedRows(
+          stats,
+          row => row.seasons
+        );
 
       return [
 
@@ -3767,78 +3320,72 @@
           icon:"🏆",
           label:"Highest Single-Week Score",
           value:
-            bestWeek
-              ? formatNumber(bestWeek["Best Week"])
+            bestWeekRows.length
+              ? formatNumber(bestWeekRows[0]["Best Week"])
               : "—",
           person:
-            bestWeek
-              ? bestWeek["Player"] + " • " + bestWeek["Season"]
-              : "—"
+            formatPlayerSeasonList(bestWeekRows)
         },
 
         {
           icon:"▥",
           label:"Highest Season Total",
           value:
-            bestSeason
-              ? formatNumber(bestSeason["Total Points"])
+            bestSeasonRows.length
+              ? formatNumber(bestSeasonRows[0]["Total Points"])
               : "—",
           person:
-            bestSeason
-              ? bestSeason["Player"] + " • " + bestSeason["Season"]
-              : "—"
+            formatPlayerSeasonList(bestSeasonRows)
         },
 
         {
           icon:"🎯",
           label:"Most Weekly Wins (Season)",
           value:
-            mostSeasonWins
-              ? formatWholeNumber(mostSeasonWins["Weekly Wins"])
+            seasonWinsRows.length
+              ? formatWholeNumber(seasonWinsRows[0]["Weekly Wins"])
               : "—",
           person:
-            mostSeasonWins
-              ? mostSeasonWins["Player"] + " • " + mostSeasonWins["Season"]
-              : "—"
+            formatPlayerSeasonList(seasonWinsRows)
         },
 
         {
           icon:"💰",
           label:"Most Career Earnings",
           value:
-            earningsLeader
-              ? formatMoney(earningsLeader.earnings)
+            earningsLeaders.length
+              ? formatMoney(earningsLeaders[0].earnings)
               : "—",
           person:
-            earningsLeader
-              ? earningsLeader.player
-              : "—"
+            formatNameList(
+              earningsLeaders.map(x => x.player)
+            )
         },
 
         {
           icon:"♛",
           label:"Most Championships",
           value:
-            titleLeader
-              ? titleLeader.championships
+            titleLeaders.length
+              ? titleLeaders[0].championships
               : "—",
           person:
-            titleLeader
-              ? titleLeader.player
-              : "—"
+            formatNameList(
+              titleLeaders.map(x => x.player)
+            )
         },
 
         {
           icon:"▦",
           label:"Most Seasons Played",
           value:
-            seasonsLeader
-              ? seasonsLeader.seasons
+            seasonsLeaders.length
+              ? seasonsLeaders[0].seasons
               : "—",
           person:
-            seasonsLeader
-              ? seasonsLeader.player
-              : "—"
+            formatNameList(
+              seasonsLeaders.map(x => x.player)
+            )
         }
 
       ];
@@ -3883,10 +3430,6 @@
 
     }
 
-    /* =========================
-       HOME HISTORY
-    ========================== */
-
     function renderHomePolish(){
 
       document.getElementById("homeChampions").innerHTML =
@@ -3894,11 +3437,6 @@
           getChampions(),
           true
         );
-
-      /*
-        NO .slice(0,6)
-        Every historical player is now shown.
-      */
 
       const allTime =
         buildAllTimeStats()
@@ -3918,9 +3456,97 @@
 
     }
 
-    /* =========================
-       HELPERS
-    ========================== */
+    function getTiedRows(items,valueGetter,filterFn = null){
+
+      const valid =
+        filterFn
+          ? items.filter(filterFn)
+          : [...items];
+
+      if(!valid.length){
+        return [];
+      }
+
+      const values =
+        valid
+          .map(valueGetter)
+          .filter(value => Number.isFinite(value));
+
+      if(!values.length){
+        return [];
+      }
+
+      const max =
+        Math.max(...values);
+
+      return valid.filter(
+        item => valueGetter(item) === max
+      );
+
+    }
+
+    function formatNameList(names){
+
+      const unique =
+        [...new Set(names.filter(Boolean))];
+
+      if(!unique.length){
+        return "—";
+      }
+
+      if(unique.length === 1){
+        return unique[0];
+      }
+
+      if(unique.length === 2){
+        return `${unique[0]} & ${unique[1]}`;
+      }
+
+      return (
+        unique.slice(0,-1).join(", ") +
+        " & " +
+        unique[unique.length - 1]
+      );
+
+    }
+
+    function formatPlayerSeasonList(rows){
+
+      if(!rows.length){
+        return "—";
+      }
+
+      const labels =
+        rows.map(
+          row =>
+            `${row["Player"]} • ${row["Season"]}`
+        );
+
+      return formatNameList(labels);
+
+    }
+
+    function getCompetitionRank(sortedRows,index,key){
+
+      const currentValue =
+        Number(sortedRows[index][key]);
+
+      let rank = 1;
+
+      for(let i = 0; i < index; i++){
+
+        if(
+          Number(sortedRows[i][key]) >
+          currentValue
+        ){
+          rank++;
+        }
+
+      }
+
+      return rank;
+
+    }
 
     function hasNumericValue(value){
 
@@ -3982,10 +3608,6 @@
       return div.innerHTML;
 
     }
-
-    /* =========================
-       START SITE
-    ========================== */
 
     loadLeagueData();
 
